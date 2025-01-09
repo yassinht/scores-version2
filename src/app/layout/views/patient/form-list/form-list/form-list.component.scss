@@ -1,0 +1,19 @@
+/* Add this CSS to your component's styles or global styles */
+
+/* Style for Doctor Header Row */
+.doctor-header {
+    background-color: #5d77e2; /* Soft light gray for doctor rows */
+    border-bottom: 1px solid #7b8df0; /* Light border for distinction */
+    color: rgb(255, 255, 255);
+  }
+  
+  /* Optional: style the even rows in the body for alternating colors */
+  p-table .p-datatable-tbody > tr:nth-child(even) {
+    background-color: #5378d0; /* Light alternating row color */
+  }
+  
+  /* Add padding to the doctor row to make it look more distinct */
+  .doctor-header td {
+    padding: 10px;
+  }
+  

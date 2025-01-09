@@ -1,0 +1,89 @@
+<div class="grid">
+  <div class="col-12">
+    <div class="card">
+      <p-panel header="{{ 'DoctorForms.formManagement' | translate }}" class="mb-4">
+
+        <p-table #dt [value]="forms" 
+        [paginator]="true"
+         [rows]="paginatorConfig.rows" 
+         [globalFilterFields]="['title']"
+         class="p-mt-3">
+
+          <!-- Search and Clear Filters -->
+          <ng-template pTemplate="caption">
+            <div class="flex justify-content-between flex-column sm:flex-row mb-3">
+              <button pButton label="{{ 'DoctorForms.clear' | translate }}" class="p-button-outlined mb-2" icon="pi pi-filter-slash"
+                (click)="clear(dt)">
+              </button>
+              <span class="p-input-icon-left mb-2">
+                <i class="pi pi-search"></i>
+                <input pInputText type="text" #globalFilter (input)="onGlobalFilter(dt, $event)"
+                  placeholder="{{ 'DoctorForms.searchKeyword' | translate }}" class="w-full">
+              </span>
+            </div>
+          </ng-template>
+          
+          <ng-template pTemplate="header">
+            <tr>
+              <th>{{ 'DoctorForms.select' | translate }}</th>
+              <th>{{ 'DoctorForms.title' | translate }}</th>
+              <th>{{ 'DoctorForms.assignedFolders' | translate }}</th>
+              <th>{{ 'DoctorForms.actions' | translate }}</th>
+            </tr>
+          </ng-template>
+          <ng-template let-form pTemplate="body">
+            <tr>
+              <td>
+                <p-checkbox [(ngModel)]="form.selected" (ngModelChange)="toggleFormSelection(form)"></p-checkbox>
+              </td>
+              <td>
+                <span class="truncate-title" [pTooltip]="form.title" tooltipPosition="top">{{ form.title }}</span>
+              </td>
+              <td>
+                <p-dropdown [(ngModel)]="form.selectedFolder"
+                  [options]="form.nameAff2?.length ? form.nameAff2 : [{ Aff1: 'DoctorForms.noFolders' | translate }]" optionLabel="Aff1"
+                  placeholder="{{ 'DoctorForms.folders' | translate }}" [disabled]="!form.nameAff2?.length">
+                </p-dropdown>
+              </td>
+              <td class="p-d-flex p-ai-center actions-buttons" style="display: flex;">
+                <button 
+                  type="button" 
+                  pButton 
+                  icon="pi pi-eye" 
+                  class="p-button-outlined p-button-primary"
+                  style="margin-right: 10px;"
+                  title="{{ 'DoctorForms.openForm' | translate }}" 
+                  label="{{ 'DoctorForms.viewForm' | translate }}"
+                  [routerLink]="['/doctor/form-preview/',form._id]">
+                </button>
+                <button 
+                  type="button" 
+                  pButton 
+                  label="{{ 'DoctorForms.sendForm' | translate }}"
+                  icon="pi pi-share-alt" 
+                  class="p-button-outlined p-button-warning" 
+                  title="{{ 'DoctorForms.sendForm' | translate }}"
+                  (click)="openAffectDialog(form);op2.toggle($event)" >
+                </button>
+              </td>
+            </tr>
+          </ng-template>
+          
+        </p-table>
+      </p-panel>
+    </div>
+  </div>
+</div>
+
+<p-overlayPanel 
+  #op2 
+  [showCloseIcon]="true" 
+  [style]="{width: '650px', background: '#e8f4ff', borderRadius: '12px', boxShadow: '0px 6px 16px rgba(0, 0, 0, 0.15)', border: '2px solid #4da6ff'}"
+  [appendTo]="'body'">
+  <ng-template pTemplate>
+    <div class="overlay-content">
+      <h3 class="overlay-header">{{ 'DoctorForms.assignPatient' | translate }}</h3>
+      <app-patient-list-affect [form]="selectedForm"></app-patient-list-affect>
+    </div>
+  </ng-template>
+</p-overlayPanel>

@@ -1,0 +1,7 @@
+.disabled-button:disabled {
+    color: inherit;  /* Prevent change in text color */
+    border: inherit;  /* Keep the border as is */
+    cursor: not-allowed;  /* Change cursor to indicate it's not clickable */
+    opacity: 1;  /* Prevent opacity change */
+  }
+  

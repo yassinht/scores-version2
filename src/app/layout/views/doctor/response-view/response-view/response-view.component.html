@@ -1,0 +1,119 @@
+  <div *ngIf="tabRep" class="p-grid p-justify-center p-m-3">
+    <div class="p-col-12 p-md-10 p-lg-8">
+        <div *ngIf="tabRep" class="card-header">
+          <h1 class="form-title">{{ tabRep?.form_title }}</h1>
+          <div class="scores-container">
+            <div *ngFor="let s of tabRep.score; let i = index" class="score-item">
+              <div class="score-text">score{{i + 1}}: {{s.toFixed(2)}}</div>
+            </div>
+          </div>
+          
+        </div>
+      
+
+
+        <div class=" mx-auto">
+          <div class="card-section section-container" *ngIf="tabRep.form_description">
+            <div class="card-header">
+              <h5 class="form-title">{{ 'AFFECTFORMS.DESC' | translate }} :</h5>
+              <h4 class="form-description">{{ tabRep.form_description }}</h4>
+            </div>
+          </div>
+        </div>
+
+        <div *ngFor="let response of tabRep.responses; let q = index" class="question-container p-mb-3">
+         
+                      <div class="question-header">
+                        <h4>{{ q + 1 }} - {{ response.title }}</h4>
+                      </div>
+                      <div class="question-body">
+                        <div *ngIf="response?.type === 'Nomber de jours'" class="col-lg-8 col-sm-12">
+                                                
+                          <!-- Check if the input is showing up -->
+                          <input pInputText type="text"  [(ngModel)]="response.minRange" disabled />
+                          </div>
+                          
+                          <div *ngIf="response?.type === 'Text court'" class="col-lg-8 col-sm-12">
+                          <input pInputText type="text"  [(ngModel)]="response.textResponse" disabled />
+                          
+                          </div>
+                          
+                          <!-- Cases à cocher -->
+                          <div *ngIf="response?.type === 'Cases à cocher'" class="">
+                          <div *ngFor="let op of response.options; let o = index" class="row">
+                            <div class="col">
+                              <p-radioButton [(ngModel)]="op.selected" [value]="true" [label]="op.text" class="m-2 w-100"></p-radioButton>
+                              <img *ngIf="op.image" [src]="op.image" alt="Option Image" class="img-thumbnail p-ml-3" style="width: 250px; height: auto; object-fit: cover;">
+                            </div>
+                          </div>
+                          </div>
+                          
+                          <!-- Choix multiples options -->
+                          <div *ngIf="response.type === 'Choix multiples'" class="">
+                          <div *ngFor="let op of response.optioncm; let o = index" class="row">
+                            <div class="col">
+                              <p-checkbox [binary]="true" [(ngModel)]="op.selected" [label]="op.text" [inputId]="'checkbox' + o" [ngClass]="'m-2 w-100'" [disabled]="true"></p-checkbox>
+                              <img *ngIf="op.image" class="img-thumbnail" [src]="op.image" alt="" style="width: 250px;">
+                            </div>
+                          </div>
+                          </div>
+                          
+                          <!-- Range Bar -->
+                          <div *ngIf="response?.type === 'Range Bar'" style="width: 100%;"  class="col-lg-12 col-sm-12 w-100" >
+                          <div class="row m-2">
+                            <div class="col-lg-8 col-sm-12" style="padding-left: 3%;">
+                              <!-- ngx-slider component -->
+                              <ngx-slider [value]="response?.scoreOptionRangeBar || 0" [options]="sliderMakeOptions(response?.scoreOptionRangeBarQuestion)">
+                              </ngx-slider>
+                            </div>
+                          </div>
+                          </div>
+                          
+                          <!-- VISUELLE ANALOGIQUE -->
+                          <div *ngIf="response?.type === 'VISUELLE ANALOGIQUE'" class="">
+                          <div class="simple-slider">
+                            <div class="row">
+                              <div class="container23">
+                                <img class="img-thumbnail" src="../../../../../../assets/demo/images/Douleurgraph1.png" alt="">
+                                <input type="range" min="0" max="10" [value]="response.score" class="slider" name="slider" id="slider" disabled>
+                              </div>
+                            </div>
+                          </div>
+                          </div>
+                          
+                          <!-- Grille de Cases à Cocher -->
+                          <div *ngIf="response.type === 'Grille de cases à cocher 2'" class="">
+                          <p-table [value]="response.scoreOptioncm2.questions">
+                            <ng-template pTemplate="header">
+                              <tr>
+                                <th>#</th>
+                                <th>Question</th>
+                                <ng-container *ngFor="let column of response.scoreOptioncm2.grille; let colIndex = index">
+                                  <th>{{ column.title }}</th>
+                                </ng-container>
+                              </tr>
+                            </ng-template>
+                          
+                            <ng-template pTemplate="body" let-question let-rowIndex="rowIndex">
+                              <tr>
+                                <td>{{ rowIndex + 1 }}</td>
+                                <td>{{ question.title }}</td>
+                                <td *ngFor="let checked of response.scoreOptioncm2.table[rowIndex]; let colIndex = index">
+                                  <p-checkbox [binary]="true" [disabled]="true" [(ngModel)]="response.scoreOptioncm2.table[rowIndex][colIndex]"></p-checkbox>
+                                </td>
+                              </tr>
+                            </ng-template>
+                          </p-table>
+                          </div>
+                      </div>
+
+
+                    </div>
+                   
+                  </div>
+              
+            
+                </div>
+      
+  
+  

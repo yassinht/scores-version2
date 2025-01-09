@@ -1,0 +1,60 @@
+span,a {
+    cursor: pointer;
+      }
+  /* General Card Styling */
+.version-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.version-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Header Styling */
+.version-header {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+/* Details Styling */
+.version-details {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Number Highlight */
+.bold {
+  font-weight: 700;
+  color: #007bff; /* Modern primary color */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .version-card {
+      padding: 0.8rem;
+  }
+  .version-header {
+      font-size: 0.9rem;
+  }
+  .version-details {
+      font-size: 0.8rem;
+  }
+}
+.clickable {
+  cursor: pointer;
+}
+  

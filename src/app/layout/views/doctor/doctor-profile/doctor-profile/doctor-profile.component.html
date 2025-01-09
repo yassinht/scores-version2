@@ -1,0 +1,170 @@
+<form [formGroup]="FormPro" (ngSubmit)="openPasswordDialog()">
+  <div class="card">
+    <h5>{{ 'doctorProfile.profileInfo' | translate }}</h5>
+
+    <!-- TabView for Profile and Password Update -->
+    <p-tabView>
+      <!-- Profile Tab -->
+      <p-tabPanel header="{{ 'doctorProfile.profileInfo' | translate }}">
+        <div class="grid p-fluid mt-3">
+          <!-- Name -->
+          <div class="field col-12 md:col-4">
+            <span class="p-float-label">
+              <input id="name" type="text" pInputText formControlName="name" placeholder="{{ 'doctorProfile.name' | translate }}" />
+              <label for="name">{{ 'doctorProfile.name' | translate }}</label>
+            </span>
+          </div>
+
+          <!-- Lastname -->
+          <div class="field col-12 md:col-4">
+            <span class="p-float-label">
+              <input id="lastname" type="text" pInputText formControlName="lastname" placeholder="{{ 'doctorProfile.lastname' | translate }}" />
+              <label for="lastname">{{ 'doctorProfile.lastname' | translate }}</label>
+            </span>
+          </div>
+
+          <!-- Email -->
+          <div class="field col-12 md:col-4">
+            <span class="p-float-label">
+              <input id="email" type="email" disabled="true" pInputText formControlName="email" placeholder="{{ 'doctorProfile.email' | translate }}" />
+              <label for="email">{{ 'doctorProfile.email' | translate }}</label>
+            </span>
+          </div>
+
+          <!-- Job -->
+          <div class="field col-12 md:col-4">
+            <p-dropdown [options]="jobs" optionLabel="viewValue" formControlName="job" placeholder="{{ selectedJob }}"></p-dropdown>
+          </div>
+
+          <!-- Birthday -->
+          <div class="field col-12 md:col-4">
+            <span class="p-float-label">
+              <p-calendar id="birthday" formControlName="birthday" dateFormat="dd/mm/yy" [showIcon]="true">
+              </p-calendar>
+              <label for="birthday">{{ 'doctorProfile.birthday' | translate }}</label>
+            </span>
+          </div>
+
+          <!-- Phone Number -->
+          <div class="field col-12 md:col-4">
+            <span class="p-float-label">
+              <input id="tel" type="text" pInputText formControlName="tel" placeholder="{{ 'doctorProfile.phoneNumber' | translate }}" />
+              <label for="tel">{{ 'doctorProfile.phoneNumber' | translate }}</label>
+            </span>
+          </div>
+
+          <!-- Fax Number -->
+          <div class="field col-12 md:col-4">
+            <span class="p-float-label">
+              <input id="fax" type="text" pInputText formControlName="fax" placeholder="{{ 'doctorProfile.fax' | translate }}" />
+              <label for="fax">{{ 'doctorProfile.fax' | translate }}</label>
+            </span>
+          </div>
+
+          <!-- Address -->
+          <div class="field col-12 md:col-4">
+            <span class="p-float-label">
+              <input id="adresse" type="text" pInputText formControlName="adresse" placeholder="{{ 'doctorProfile.address' | translate }}" />
+              <label for="adresse">{{ 'doctorProfile.address' | translate }}</label>
+            </span>
+          </div>
+
+          <!-- RPPS -->
+          <div class="field col-12 md:col-4">
+            <span class="p-float-label">
+              <input id="rpps" type="text" pInputText formControlName="rpps" placeholder="{{ 'doctorProfile.rpps' | translate }}" />
+              <label for="rpps">{{ 'doctorProfile.rpps' | translate }}</label>
+            </span>
+          </div>
+
+          <!-- TITLE -->
+          <div class="field col-12 md:col-4">
+            <span class="p-float-label">
+              <p-dropdown [options]="titles" formControlName="title"></p-dropdown>
+              <label for="title">{{ 'doctorProfile.title' | translate }}</label>
+            </span>
+          </div>
+
+          <!-- Edit Button with Responsive Grid -->
+          <div class="field col-12 md:col-6 lg:col-3">
+            <button type="button" pButton (click)="toggleEditMode()" label="{{ 'doctorProfile.modify' | translate }}" class="p-button-sm p-button-warning"></button>
+          </div>
+
+          <!-- Submit Button -->
+          <div class="field col-12 md:col-6 lg:col-3">
+            <button pButton type="submit" [disabled]="!EditMode" label="{{ 'doctorProfile.submit' | translate }}" class="p-button-primary p-button-sm"></button>
+          </div>
+        </div>
+      </p-tabPanel>
+
+      <!-- Password Update Tab -->
+      <p-tabPanel header="{{ 'doctorProfile.changePassword' | translate }}">
+        <form [formGroup]="changePasswordForm" (ngSubmit)="updatePassword()">
+          <div class="grid p-fluid mt-3">
+            <!-- Old Password -->
+            <div class="field col-12 md:col-4">
+              <span class="p-float-label">
+                <input type="password" pInputText formControlName="password" placeholder="{{ 'doctorProfile.oldPassword' | translate }}" />
+                <label for="password">{{ 'doctorProfile.oldPassword' | translate }}</label>
+              </span>
+            </div>
+
+            <!-- New Password -->
+            <div class="field col-12 md:col-4">
+              <span class="p-float-label">
+                <input type="password" pInputText formControlName="newPassword" placeholder="{{ 'doctorProfile.newPassword' | translate }}" />
+                <label for="newPassword">{{ 'doctorProfile.newPassword' | translate }}</label>
+              </span>
+            </div>
+
+            <!-- Confirm Password -->
+            <div class="field col-12 md:col-4">
+              <span class="p-float-label">
+                <input type="password" pInputText formControlName="confirmPassword" placeholder="{{ 'doctorProfile.confirmPassword' | translate }}" />
+                <label for="confirmPassword">{{ 'doctorProfile.confirmPassword' | translate }}</label>
+              </span>
+              <div *ngIf="changePasswordForm.hasError('mismatch')">
+                <small class="p-error">{{ 'doctorProfile.passwordMismatch' | translate }}</small>
+              </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="field col-12 md:col-6 lg:col-3">
+              <button pButton type="submit" label="{{ 'doctorProfile.submit' | translate }}" class="p-button-primary p-button-sm"></button>
+            </div>
+          </div>
+        </form>
+      </p-tabPanel>
+    </p-tabView>
+
+    <!-- Password Confirmation Dialog -->
+    <p-dialog 
+      [(visible)]="isPasswordDialogVisible" 
+      header="{{ 'doctorProfile.passwordDialogHeader' | translate }}" 
+      [modal]="true" 
+      [style]="{width:'450px'}"
+      [closable]="false">
+      <form (ngSubmit)="updateProfile()">
+        <div class="field">
+          <span class="p-float-label">
+            <input 
+              type="password" 
+              id="dialog-password" 
+              pInputText 
+              [(ngModel)]="password" 
+              name="password" 
+              placeholder="{{ 'doctorProfile.passwordDialogPlaceholder' | translate }}" 
+              required />
+            <label for="dialog-password">{{ 'doctorProfile.passwordDialogPlaceholder' | translate }}</label>
+          </span>
+        </div>
+        <div class="flex justify-content-end">
+          <button type="button" pButton label="Cancel" class="p-button-text" (click)="closePasswordDialog()"></button>
+          <button type="submit" pButton label="Confirm" class="p-button-primary"></button>
+        </div>
+      </form>
+    </p-dialog>
+
+    <p-toast key="tst"></p-toast>
+  </div>
+</form>

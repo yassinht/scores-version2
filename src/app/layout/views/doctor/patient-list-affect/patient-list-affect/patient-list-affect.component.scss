@@ -1,0 +1,19 @@
+.clickable-icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    color: #007bff; /* Makes it look clickable (similar to a link) */
+    display: inline-flex;
+    align-items: center;
+  }
+  
+  .clickable-icon:hover {
+    color: #0056b3; /* Darker color on hover */
+    text-decoration: underline; /* Adds underline on hover */
+  }
+  
+  .clickable-icon:focus {
+    outline: 2px solid #007bff; /* Adds focus ring for accessibility */
+  }
+  

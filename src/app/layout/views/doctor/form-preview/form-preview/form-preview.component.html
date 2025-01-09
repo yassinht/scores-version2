@@ -1,0 +1,202 @@
+<div *ngIf="form" class="p-grid p-justify-center p-m-3">
+  <div class="p-col-12 p-md-10 p-lg-8">
+    <div class="flex" style="justify-content: end; align-items: flex-start; position: relative;">
+      <!-- Affect button (Top-left) -->
+      <p-button 
+        [label]="'DoctorForms.sendForm' | translate" 
+        icon="pi pi-share-alt" 
+        class="p-button-text" 
+        (click)="op2.toggle($event); fetchPatients()">
+      </p-button>
+    </div>
+    <h2 class="section-title p-text-bold" style="margin: 20px;">{{form.title}}</h2>
+    <h5 class="section-title p-text-bold" style="margin: 20px;">{{form.description  }}</h5>
+
+    <div *ngFor="let section of form.sections; let s = index" class="p-mb-4">
+      
+      <!-- Section Header with Border Under Title -->
+      <div *ngFor="let section of form.sections; let s = index" class="section-container p-mb-4">
+        <div class="section-header p-mb-3" style="border-bottom: 8px solid #1762d3; margin-bottom: 20px;">
+          <h4 class="section-title p-text-bold" style="margin-top: 20px;">
+            Section {{s+1}} : {{ section.title }}
+          </h4>
+        </div>
+
+        <!-- Questions for each section -->
+        <div *ngFor="let question of section.questions; let q = index" class="question-container p-mb-3">
+          <div class="question-header">
+            <h4>{{ q + 1 }} - {{ question.title }}</h4>
+          </div>
+          <div class="question-body">
+            <!-- Text Court -->
+            <div *ngIf="question.type === 'Text court'" class="p-field">
+              <input pInputText 
+                id="shortText{{ q }}" 
+                [(ngModel)]="textcourt" 
+                (change)="updateQuestionStatus(s, q)" 
+                [disabled]="disabled" />
+            </div>
+
+            <!-- Nombre de Jours -->
+            <div *ngIf="question.type === 'Nomber de jours'" class="p-field">
+              <input pInputText 
+                id="numberDays{{ q }}" 
+                type="number" 
+                [(ngModel)]="Nomberdej" 
+                placeholder="Enter number" 
+                (change)="updateQuestionStatus(s, q)" 
+                [disabled]="disabled" />
+            </div>
+
+            <!-- Choix multiples options -->
+            <div *ngIf="question.type === 'Choix multiples'" class="col-lg-12 col-sm-12 w-100">
+              <div *ngFor="let op of question.optioncm; let o = index" class="row">
+                <div class="col">
+                  <p-checkbox 
+                    [binary]="true" 
+                    [(ngModel)]="op.selected" 
+                    [label]="op.text" 
+                    [inputId]="'checkbox' + o" 
+                    [ngClass]="'m-2 w-100'" 
+                    [disabled]="disabled"
+                    (onChange)="combinedcheckbox(op, $event, s, 'question' + o + ',' + s + ',' + q, 'Q ' + '(' + s + ',' + q + ')', question, q, o, $event, s); 
+                    handleConditionalMultichoix(op, s, q, s); 
+                    updateQuestionStatus(s, q)">
+                  </p-checkbox>
+                  <img *ngIf="op.image" class="img-thumbnail" [src]="op.image" alt="" style="width: 250px;">
+                </div>
+              </div>
+            </div>
+
+            <!-- Range Bar -->
+            <div *ngIf="section.questions[q].type == 'Range Bar'" style="width: 100%;" class="col-lg-12 col-sm-12 w-100" [ngClass]="{ 'disabled-section': section.questions[q].conditional }">
+              <div *ngFor="let op of section.questions[q].options; let o = index;">
+                <div class="row m-2">
+                  <div class="col-lg-8 col-sm-12" style="padding-left: 3%;">
+                    <div class="simple-slider">
+                      <ngx-slider
+                        #slider
+                        id="slider{{s}}{{q}}"
+                        [min]="10"  
+                        [max]="100" 
+                        [step]="10"
+                        [value]="section.questions[q].data" 
+                        [options]="sliderOptions[q] || sliderMakeOptions(section.questions[q])" 
+                        (userChange)="getdataRangeBar(section.questions[q], section.questions[q].dataRange, q, o, $event, s, slider); 
+                        updateQuestionStatus(s, q)"
+                        [disabled]="true">
+                      </ngx-slider>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- VISUELLE ANALOGIQUE -->
+            <div *ngIf="question.type === 'VISUELLE ANALOGIQUE'" >
+              <div class=>
+                <div class= >
+                  <div class="simple-slider">
+                    <div class="row">
+                      <div class="container23">
+                        <img
+                          class="img-thumbnail"
+                          src="../../../../../../assets/demo/images/Douleurgraph1.png"
+                          alt="Pain Scale"
+                        />
+                        <input
+                          type="range"
+                          min="0"
+                          max="10"
+                          [(ngModel)]="question.data"
+                          (change)="combinedVisuelle(question, 'VISUELLE ANALOGIQUE', q, o, $event, s, $event, s, 'Q '+'('+ s +',' + q+')','visuelleanalogique')"
+                          value="5"
+                          class="slider"
+                          id="slider"
+                          [disabled]="disabled"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Cases à cocher -->
+            <div *ngIf="question.type === 'Cases à cocher'" class="col-lg-12 col-sm-12 w-100">
+              <div class="grid formgrid">
+                <div class="col-12" *ngFor="let op of question.options; let o = index">
+                  <div class="field-radiobutton p-d-flex p-flex-column p-mb-3">
+                    <p-radioButton 
+                      [value]="op.text" 
+                      [(ngModel)]="question.selectedOption" 
+                      [disabled]="disabled" 
+                      (ngModelChange)="combinedCasesCocher(op, $event, s, 'question' + o + ',' + s + ',' + q, 'Q ' + '(' + s + ',' + q + ')', op, question, q, o, s);" 
+                      (click)="updateQuestionStatus(s, q)"
+                      [inputId]="'radio' + o">
+                    </p-radioButton>
+                    <label [for]="'radio' + o" class="textt text-wrap p-mb-2">{{ op.text }}</label>
+                    <img *ngIf="op.image" class="img-thumbnail" [src]="op.image" alt="" style="width: 250px;">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Grille de Cases à Cocher -->
+            <div *ngIf="question.type === 'Grille de cases à cocher 2'" class="p-mt-3">
+              <p-table [value]="question.grille.options">
+                <ng-template pTemplate="header">
+                  <tr>
+                    <th style="text-align: center;">Option</th>
+                    <th *ngFor="let col of question.grille.scoreS" style="text-align: center;">
+                      <div class="scrollable-header">{{ col.title }}</div>
+                    </th>
+                  </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-row let-rowIndex="rowIndex">
+                  <tr>
+                    <td style="text-align: center;">{{ row.title }}</td>
+                    <td *ngFor="let col of question.grille.scoreS; let colIndex = index" class="col-lg-1" style="padding-bottom: 20px; text-align: center;">
+                      <p-radioButton 
+                        name="row_{{rowIndex}}" 
+                        [value]="col.title" 
+                        [(ngModel)]="row.selectedOption"  
+                        (onClick)="GrilleCases(question.grille, rowIndex, colIndex, s, q, question, col.score, col, s, 'question' + rowIndex + ',' + s + ',' + q, 'Q (' + s + ',' + q + ')'); 
+                        GrilleCasesRemplited(question.grille, rowIndex, colIndex, s, q, question, col.score, col, s); 
+                        updateQuestionStatus(s, q)"
+                        [disabled]="disabled">
+                      </p-radioButton>
+                    </td>
+                  </tr>
+                </ng-template>
+              </p-table>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngFor="let bib of form.messages; let q = index">
+    <h4 class="section-title p-text-bold" style="margin-top: 20px;">
+      Bibliographie :
+    </h4>
+    <h5 class="section-title p-text-bold" style="margin: 20px;">{{bib.message  }}</h5>
+
+  </div>
+
+</div>
+
+
+<p-overlayPanel 
+  #op2 
+  [showCloseIcon]="true" 
+  [style]="{width: '650px', background: '#e8f4ff', borderRadius: '12px', boxShadow: '0px 6px 16px rgba(0, 0, 0, 0.15)', border: '2px solid #4da6ff'}"
+  [appendTo]="'body'">
+  <ng-template pTemplate>
+    <div class="overlay-content">
+      <h3 class="overlay-header">{{ 'DoctorForms.assignPatient' | translate }}</h3>
+      <app-patient-list-affect [form]="form"></app-patient-list-affect>
+    </div>
+  </ng-template>
+</p-overlayPanel>

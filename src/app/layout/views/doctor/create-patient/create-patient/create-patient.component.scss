@@ -1,0 +1,49 @@
+.card {
+    padding: 2rem;
+  }
+  
+  .mt-3 {
+    margin-top: 1rem;
+  }
+  
+  .mt-4 {
+    margin-top: 1.5rem;
+  }
+  
+  .text-success {
+    color: green;
+  }
+  
+  .text-danger {
+    color: red;
+  }
+  .p-inputgroup {
+    display: flex;
+    align-items: center;
+  }
+  
+  .p-inputgroup-addon {
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    border-left: none;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .p-inputgroup input {
+    flex: 1;
+    border-radius: 0;
+  }
+  
+  .p-field {
+    margin-bottom: 1rem;
+  }
+  
+  p {
+    margin: 0 0 1rem;
+    text-align: center;
+    font-size: 1rem;
+  }
+  

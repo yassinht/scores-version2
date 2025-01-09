@@ -1,0 +1,90 @@
+<div *ngFor="let response of tabRep.responses; let s = index">
+    <div class="col-12 col-md-12 col-xs-12 col-lg-12 mx-auto">
+      <p-panel [style]="{ 'background-color': '#ffffffde' }" *ngIf="response.title != ''" header="{{ s + 1 }}- {{ response.title }}">
+        <div class="row w-100">
+          <div class="col-lg-8 col-sm-12" *ngIf="response?.type == 'Nomber de jours'">
+            <p>{{ response.minRange }}</p>
+          </div>
+  
+          <div class="col-lg-8 col-sm-12" *ngIf="response?.type == 'Text court'">
+            <p>{{ response.textResponse }}</p>
+          </div>
+  
+          <div *ngIf="response?.type == 'Cases à cocher'">
+            <div *ngFor="let op of response.options" class="p-col-12 p-md-4">
+              <div class="field-radiobutton">
+                <!-- PrimeNG RadioButton Component -->
+                <p-radioButton 
+                  name="option" 
+                  [value]="op.text" 
+                  [ngModel]="op.selected ? op.text : null" 
+                  [disabled]="true" 
+                  id="radio-{{op.text}}"
+                  class="p-element">
+                  <div class="p-radiobutton p-component">
+                    <div class="p-hidden-accessible">
+                      <input type="radio" [value]="op.text" name="option" id="radio-{{op.text}}" aria-checked="false">
+                    </div>
+                    <div class="p-radiobutton-box">
+                      <span class="p-radiobutton-icon"></span>
+                    </div>
+                  </div>
+                </p-radioButton>
+                <label for="radio-{{op.text}}">{{ op.text }}</label>
+              </div>
+              <img *ngIf="op.image !== ''" style="width: 250px;" class="img-thumbnail" [src]="op.image" alt="">
+            </div>
+          </div>
+          
+          
+          <div *ngIf="response?.type == 'Choix multiples'" class="col-lg-12 col-sm-12 w-100">
+            <div *ngFor="let op of response.optioncm" class="p-field-checkbox">
+              <p-checkbox [label]="op.text" [(ngModel)]="op.selected" [disabled]="true"></p-checkbox>
+              <img *ngIf="op.image != ''" style="width: 250px;" class="img-thumbnail" [src]="op.image" alt="">
+            </div>
+          </div>
+  
+          <div *ngIf="response?.type === 'Range Bar'" class="col-lg-12 col-sm-12 w-100">
+            <div class="row m-2">
+              <div class="col-lg-8 col-sm-12" style="padding-left: 3%;">
+                <p-slider [ngModel]="response?.scoreOptionRangeBar || 0" [disabled]="true" [step]="1" [min]="0" [max]="response?.scoreOptionRangeBarQuestion"></p-slider>
+              </div>
+            </div>
+          </div>
+  
+          <div *ngIf="response?.type == 'VISUELLE ANALOGIQUE'" class="col-lg-12 col-sm-12 w-100">
+            <div class="row m-2">
+              <div class="col-lg-8 col-sm-12" style="padding-left: 3%;">
+                <div class="row">
+                  <div class="container23">
+                    <img class="img-thumbnail" src="../../../../../assets/Douleurgraph1.png" alt="">
+                    <input type="range" min="0" max="10" [value]="response.score" class="slider" name="slider" id="slider" disabled>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <div *ngIf="response.type === 'Grille de cases à cocher 2'" class="col-lg-12 col-sm-12 w-100">
+            <p-table [value]="response.scoreOptioncm2.questions">
+              <ng-template pTemplate="header">
+                <tr>
+                  <th></th>
+                  <th *ngFor="let grille of response.scoreOptioncm2.grille">{{ grille.title }}</th>
+                </tr>
+              </ng-template>
+              <ng-template pTemplate="body" let-question let-rowIndex="rowIndex">
+                <tr>
+                  <td>{{ rowIndex + 1 }}- {{ question.title }}</td>
+                  <td *ngFor="let checked of response.scoreOptioncm2.table[rowIndex]">
+                    <p-checkbox [binary]="true" [ngModel]="checked" [disabled]="true"></p-checkbox>
+                  </td>
+                </tr>
+              </ng-template>
+            </p-table>
+          </div>
+        </div>
+      </p-panel>
+    </div>
+  </div>
+  

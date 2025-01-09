@@ -1,0 +1,548 @@
+{
+    "LANGUAGEOPTION": {
+      "CAPTION": "Choose Language"
+    },
+    
+    "affectation": {
+      "formTitle": "Titre du formulaire",
+      "clear": "Effacer",
+      "searchKeyword": "Rechercher",
+      "actions": "Actions",
+      "name": "Nom & Prénom",
+      "email": "Email",
+      "send": "Envoyer",
+      "sharePatientDetails": "Cliquer pour partager",
+      "noPatientsFound": "Aucun patient trouvé.",
+      "loadingPatientData": "Chargement des données des patients. Veuillez patienter.",
+      "formAffectedSuccessfully": "Formulaire affecté avec succès",
+      "formAffectationFailed": "L'affectation du formulaire a échoué",
+      "formAlreadyAffected": "Le formulaire \"{0}\" est déjà affecté"
+    },
+      "menu": {
+          "home": "Accueil",
+          "profile": "Profil",
+          "patients": "Patients",
+          "patientList": "Liste des patients",
+          "addPatient": "Ajouter un compte patient",
+          "myPatients": "Mes patients",
+          "forms": "Formulaires",
+          "formList": "Liste des formulaires",
+          "completedForms": "Formulaires remplis",
+          "reports": "Bilans",
+          "files": "Dossiers",
+          "fileList": "Liste des dossiers",
+          "professionals": "Professionnels",
+          "invitations": "Invitations",
+          "profList": "Liste des professionnels",
+          "pendingForms": "Formulaires à remplir",
+          "confirmLogout": "Confirmer la déconnexion",
+    "logoutConfirmation": "Êtes-vous sûr de vouloir vous déconnecter ?",
+    "cancel": "Annuler",
+    "logout": "Déconnexion"
+      },
+      "patientInvitations": {
+        "title": "Invitations des patients",
+        "searchPlaceholder": "Rechercher",
+        "headers": {
+          "name": "Nom",
+          "specialty": "Spécialité",
+          "status": "Statut",
+          "actions": "Actions"
+        },
+        "status": {
+          "accepted": "Accepté",
+          "pending": "En attente"
+        },
+        "actions": {
+          "accept": "Accepter"
+        },
+        "noData": "Aucune invitation trouvée."
+      },
+      "profileInformation": {
+  "title": "Informations du Profil",
+  "profileTab": "Profil",
+  "changePasswordTab": "Changer le mot de passe",
+  "name": "Prénom",
+  "lastname": "Nom",
+  "email": "Email",
+  "gender": "Genre",
+  "birthday": "Date de naissance",
+  "tel": "Numéro de téléphone",
+  "weight": "Poids",
+  "size": "Taille",
+  "ssn": "N° de sécurité sociale",
+  "oldPassword": "Ancien mot de passe",
+  "newPassword": "Nouveau mot de passe",
+  "confirmPassword": "Confirmer le mot de passe",
+  "passwordMismatch": "Les mots de passe ne correspondent pas",
+  "editButton": "Modifier",
+  "submitButton": "Soumettre",
+  "passwordDialogHeader": "Entrez le mot de passe",
+  "password": "Mot de passe",
+  "cancelButton": "Annuler",
+  "confirmButton": "Confirmer"
+},
+"patientForm": {
+  "clearFiltersButton": "Effacer les filtres",
+  "searchPlaceholder": "Rechercher",
+  "formTitle": "Titre du formulaire",
+  "searchByTitlePlaceholder": "Rechercher par titre",
+  "affectedOn": "Date d'affectation",
+  "searchByDatePlaceholder": "Rechercher par date",
+  "noUnfilledFormsMessage": "Aucun formulaire non rempli disponible",
+  "doctorHeader": "{{ doctor.name }} ({{ doctor.job }})"
+},
+"patientCreation": {
+    "CREATE_PATIENT": "Créer un patient",
+    "PLACEHOLDER_EMAIL": "Entrez votre email",
+    "LABEL_EMAIL": "Email",
+    "VERIFY_EMAIL": "Vérifier l'email",
+    "WHAT_NEXT": "Que voulez-vous faire ensuite ?",
+    "SEND_INVITATION": "Envoyer une invitation",
+    "FILL_ACCOUNT_DETAILS": "Remplir les informations du compte",
+    "LOADING": "Chargement...",
+    "ENTER_PASSWORD": "Entrer le mot de passe",
+    "PASSWORD_PROMPT": "Veuillez entrer un mot de passe pour le nouveau compte.",
+    "PLACEHOLDER_PASSWORD": "Entrez votre mot de passe",
+    "LABEL_PASSWORD": "Mot de passe",
+    "PASSWORD_MINLENGTH_ERROR": "Le mot de passe doit contenir au moins 8 caractères.",
+    "PLEASE_ENTER_EMAIL": "Veuillez entrer une adresse e-mail.",
+    "INVALID_EMAIL": "L'adresse e-mail est invalide.",
+    "BLOCKED_ACCOUNT": "Ce compte est bloqué.",
+    "EXISTING_ACCOUNT": "Ce compte existe déjà.",
+    "NON_EXISTENT_ACCOUNT": "Cet email est valide.",
+    "ALREADY_IN_CONTACT": "Cet email est déjà en contact.",
+    "UNEXPECTED_RESPONSE": "Réponse inattendue du serveur.",
+    "ISSUE_OCCURRED": "Un problème est survenu. Veuillez réessayer.",
+    "ERROR_OCCURED": "Une erreur s'est produite.",
+    "VERIFY_EMAIL_FIRST": "Veuillez d'abord vérifier l'email.",
+    "INVITATION_SENT": "Invitation envoyée",
+    "NAVIGATING_TO_FORM": "Redirection vers le formulaire de création de compte.",
+    "ACCOUNT_CREATED_SUCCESS": "Compte créé avec succès",
+    "ACCOUNT_CREATION_FAILED": "Échec de la création du compte",
+    "WARNING": "Attention",
+    "ERROR": "Erreur",
+    "SUCCESS": "Succès",
+    "INFO": "Info"
+  },
+  "doctorProfile": {
+    "profileInfo": "Informations sur le profil",
+    "name": "Nom",
+    "lastname": "Prénom",
+    "email": "Email",
+    "job": "Métier",
+    "birthday": "Date de naissance",
+    "phoneNumber": "Numéro de téléphone",
+    "fax": "Numéro de Fax",
+    "address": "Adresse",
+    "rpps": "RPPS",
+    "title": "Titre",
+    "modify": "Modifier",
+    "submit": "Soumettre",
+    "oldPassword": "Ancien mot de passe",
+    "newPassword": "Nouveau mot de passe",
+    "confirmPassword": "Confirmer le mot de passe",
+    "passwordMismatch": "Les mots de passe ne correspondent pas",
+    "updateProfileSuccess": "Profil mis à jour avec succès.",
+    "updateProfileError": "Échec de la mise à jour du profil, vérifiez votre mot de passe !",
+    "updatePasswordSuccess": "Mot de passe mis à jour avec succès !",
+    "updatePasswordError": "Vérifiez votre mot de passe actuel !",
+    "passwordRequired": "Le mot de passe est requis !",
+    "passwordDialogHeader": "Entrez le mot de passe",
+    "passwordDialogPlaceholder": "Mot de passe",
+    "profileUpdatedSuccessfully": "Profil mis à jour avec succès.",
+    "changePassword": "Changer le mot de passe",
+    "profileUpdateFailed": "Échec de la mise à jour du profil. Veuillez vérifier votre mot de passe.",
+    "passwordUpdatedSuccessfully": "Mot de passe mis à jour avec succès!",
+    "passwordUpdateFailed": "Veuillez vérifier votre mot de passe actuel!"
+  },
+  
+    "myPatient": {
+      "patientsList": "Liste des patients",
+      "clear": "Effacer",
+      "searchKeyword": "Recherche",
+      "loading": "Chargement...",
+      "filterByStatus": "Filtrer par statut",
+      "filterByDate": "Filtrer par date",
+      "pageSize": "Taille de la page",
+      "currentPage": "Page actuelle",
+      "noPatientsFound": "Aucun patient trouvé.",
+      "loadingPatientData": "Chargement des données du patient. Veuillez patienter.",
+      "invitationSuccess": "Invitation envoyée avec succès.",
+      "invitationError": "Invitation non envoyée.",
+      "addPatient": "Ajouter un patient",
+      "editPatient": "Modifier le patient",
+      "deletePatient": "Supprimer le patient",
+      "patientDetails": "Détails du patient",
+      "updatePatient": "Mettre à jour le patient",
+      "patientStatus": "Statut du patient",
+      "viewProfile": "Voir le profil",
+      "name": "Nom",
+      "email": "E-mail",
+      "searchByEmail": "Rechercher par e-mail",
+      "formsFilled": "remplis",
+      "formsNotFilled": "non remplis",
+      "lastFormDate": "Date d'affectation",
+      "actions": "Actions",
+      "forms": "Forms",
+      "completedForms": "Formulaires complétés",
+      "incompleteForms": "Formulaires incomplets",
+      "searchForms": "Rechercher des formulaires",
+      "formTitle": "Titre du formulaire",
+      "affectedDate": "Date d'attribution",
+      "filledDate": "Date de remplissage",
+      "dueDate": "Date d'échéance",
+      "noCompletedForms": "Aucun formulaire complété.",
+      "noIncompleteForms": "Aucun formulaire incomplet."
+    },
+  "DoctorForms": {
+    "formManagement": "Gestion des formulaires",
+    "clear": "Effacer",
+    "searchKeyword": "Rechercher",
+    "select": "Sélectionner",
+    "title": "Titre",
+    "assignedFolders": "Dossiers assignés",
+"folders":"dossiers",
+    "actions": "Actions",
+    "viewForm": "Voir le formulaire",
+    "sendForm": "Envoyer le formulaire",
+    "openForm": "Ouvrir le formulaire",
+    "assignPatient": "Assigner un patient",
+    "noFolders": "Pas de dossiers"
+  },
+  "MyFolders": {
+    "folders":"dossiers",
+    "foldersList": "Liste des Dossiers",
+    "clear": "Effacer",
+    "searchKeyword": "Rechercher",
+    "name": "Nom",
+    "actions": "Actions",
+    "folderContent": "Contenu du dossier"
+  },
+  "folderPreview": {
+    "searchKeyword": "recherche",
+    "clear": "Effacer",
+    "select": "Sélectionner",
+    "title": "Titre",
+    "assignedFolders": "Dossiers assignés",
+    "actions": "Actions",
+    "viewForm": "Voir le formulaire",
+    "sendForm": "Envoyer le formulaire",
+    "openForm": "Ouvrir le formulaire",
+    "dossiers": "Dossiers",
+    "assignPatient": "Assigner le patient"
+  },
+      "table": {
+        "clear": "Effacer",
+        "search_keyword": "Recherche",
+        "name": "Nom",
+        "search_by_name": "Rechercher par nom",
+        "email": "E-mail",
+        "search_by_email": "Rechercher par e-mail",
+        "job_title": "Titre du poste",
+        "search_by_job": "Rechercher par métier",
+        "phone": "Téléphone",
+        "search_by_phone": "Rechercher par téléphone",
+        "forms_filled": "Formulaires remplis",
+        "forms_not_filled": "Formulaires non remplis",
+        "done": "Terminé",
+        "pending": "En attente",
+        "form_title": "Titre du formulaire",
+        "status": "Statut"
+      },
+        
+    "MENU": {
+      "HOME": "Home",
+      "CUSTOMERES": "Customers",
+      "ITEM": "Item"
+    },
+    "HOME": {
+      "TITLE": "Multilingual Website",
+      "SELECT": ".SELECT"
+    },
+    "PROFILE": {
+      "NAME": "Nom et prénom",
+      "EMAIL": "E-mail",
+      "TELE": "Téléphone",
+      "PROF": "Professionnel",
+      "PAT": "Patient",
+      "PROFIL": "Mon Profil",
+      "BRITHDATE": "Date de naissance",
+      "ADRESS": "Adresse",
+      "UPDATE": "Modifier",
+      "conf": "Confirmer",
+      "PHOTOPROFIL": "Modifier la photo",
+      "SEND": "Envoyer",
+      "UPDATEPROFILE": "Modifier profil",
+      "Profile": "Profil",
+      "view": "Afficher les informations",
+      "modify": "Modifier les informations",
+      "change": "Changer le mot de passe",
+      "update": "Mettre à jour le mot de passe",
+      "old": "Ancien mot de passe",
+      "new": "Nouveau mot de passe",
+      "join": "date d'adhésion"
+    },
+    "MAILER": {
+      "NAME": "Nom et prénom",
+      "EMAIL": "E-mail",
+      "SUBJECT": "Sujet",
+      "MESSAGE": "Message"
+    },
+    "LISTPATIENT": {
+      "LISTPATIENT": "Liste des patients",
+      "SEARCH": "Chercher",
+      "STATUSFORMS": "État du formulaire",
+      "NAME": "Nom",
+      "PRENOM": "Prénom",
+      "DATECREATED": "Date de création",
+      "DATEAFFECTED": "Date d'Affectation",
+      "ETAT": "État",
+      "AUCUNN": "AUCUN INVITATION",
+      "PATIENT": "Mes Patients",
+      "CC": "Creation compte patient"
+    },
+    "FORMS": {
+      "FORMS": "Formulaires",
+      "DO": "Les dossiers",
+      "LISTFORM": "Liste des Formulaire",
+      "VIEWFORMS": "Afficher",
+      "AFFECTFORM": "Affecter",
+      "AUCUNN": "AUCUN PATIENT"
+    },
+    "HOMES": {
+      "HOME": "Accueil",
+      "APROP": "À propos de nous",
+      "CONTACT": "Nous contacter",
+      "ESPACEPRO": "Espace professionnel",
+      "ESPACEPATIENT": "Espace patient",
+      "PHRASE": "BIENVENUE DANS L'APPLICATION SCORES",
+      "PHRASE1": "Notre équipe est là pour vous aider",
+      "START": "COMMENCER",
+      "INFO": "Plus d'informations",
+      "CONT": "Contactez-nous "
+    },
+    "AUCUN": {
+      "AUCUNN": "AUCUN INVITATION"
+    },
+    "INVIT": {
+      "DETAIL": "Détail",
+      "ACCEPT": "Accepter",
+      "INVIT": "Mes Invitations",
+      "ALL": "Afficher tout"
+    },
+    "LISTCONTACT": {
+      "LISTPATIENT": "Liste des contacts",
+      "SEARCH": "Chercher",
+      "STATUSFORMS": "État du formulaire",
+      "NAME": "Nom",
+      "PRENOM": "Prénom",
+      "DATECREATED": "Date de création",
+      "REMPLITEDDATE":"Date de remplissage",
+      "ETAT": "État"
+    },
+    "SIDEMENU": {
+      "MC": "Mon compte",
+      "LP": "Liste des patients",
+      "MP": "Mes Patients",
+      "MF": "Mes formulaires",
+      "DEC": "Déconnexion",
+      "LI": "Liste des invitations",
+      "CO": "Contacts",
+      "DO": "Dossiers",
+      "AP": "Ajouter patient"
+    },
+    "AFFECTFORMS": {
+      "AFFECTBY": "Formulaire affecter",
+      "FORMSFILLED": "Formulaire remplis",
+      "FORMSUNFILLED": "Formulaire non remplis",
+      "TITLE": "Titre",
+      "DESC": "Description",
+      "AUCUNN": "AUCUNE CONTACT"
+    },
+    "CONTACT": {
+      "LOCATION": "Adresse",
+      "EMAIL": "E-mail",
+      "TELE": "Téléphone",
+      "YN": "Nom et prénom",
+      "YE": "E-mail",
+      "SB": "Sujet",
+      "MES": "Message",
+      "CONT": "NOUS CONTACTER À ",
+      "SEND": "Envoyer message"
+    },
+    "AUTH": {
+      "IDENTIFIER": "S'identifier / S'inscrire",
+      "IDENTIFIER2": "S'identifier",
+      "INSCRIRE": "S'inscrire",
+      "EMAIL": "E-mail",
+      "MOTDEPASS": "Mot de passe",
+      "SIGNIN": "Connecter",
+      "CG": "Connexion avec Gouugle",
+      "RM": "Se souvenir de moi !",
+      "NOM": "Nom",
+      "PRENOM": "Prénom",
+      "DATEN": "Date de naissance",
+      "TELE": "Téléphone",
+      "ADDRESS": "Adresse",
+      "METIER": "Métier",
+      "CFM": "Confirmer le mot de passe ",
+      "ACCEPTT": "Accepter Terms & Conditions",
+      "PROF": "Professionnel ",
+      "PAT": "Patient ",
+      "POID": "Poids (en Kg)",
+      "SIZE": "Taille (en cm)",
+      "IMC": "IMC",
+      "SEXEH": "Homme",
+      "SEXEF": "Femme",
+      "TITRE": "Titre",
+      "CS": " Confirmer de signature ",
+      "CLEAR": "Effacer",
+      "ENR": "Enregistrer",
+      "MM": "JJ/MM/AAAA",
+      "GENDER": "Genre",
+      "COUNTRY":"Pays"
+    },
+    "P": {
+      "MC": "MIEUX NOUS CONNAITRE",
+      "PH1": "Application de Scores et d'Échelles d'auto-évaluation référencés scientifiqument pour les professionnels de santé ",
+      "PH2": "Notre société a développé avec une cohorte de patients experts et de praticiens un dispositif médical d'auto-évaluation connecté pour répondre à vos attentes. Nous vous proposons une application modulable qui s'adapte à votre pratique, qui implique votre patient dans la prise en charge et l'évolution de ses soins. ",
+      "PH3": "Les résultats sont disponibles instantanément, une analyse possible dès la saise par le (la) patient(e) pour un suivi plus rapide de son traitement ."
+    },
+    "PAGINATION": {
+      "PR": "Retour",
+      "NEXT": "Suivant"
+    },
+    "VALIDEMAIL": {
+      "EA": "Adresse E-mail",
+      "ENTERE": "Entrer E-mail",
+      "VALIDER": "Valider"
+    },
+    "DIALOG": {
+      "BN": "Bonjour",
+      "PARA": "Pour me permettre d’élaborer un traitement le mieux approprié à vos symptômes, je vous remercie de répondre aux questionnaires suivants en cliquant sur le ou les boutons approprié(s). Ces questions portent sur certains symptômes pelviens. En répondant, prenez en compte les symptômes que vous avez ressentis. Vous pouvez vous y opposer, à tout moment, sans autre forme de justification. Les informations recueillies sont strictement confidentielles. Elles feront l’objet, sauf opposition justifiée de votre part, d’un enregistrement informatique réservé à l’usage de votre professionnel de santé. Votre professionnel de santé traitant se tient à votre disposition pour vous communiquer tout renseignement ainsi que toute information nécessaire à votre état de santé. Tout médecin, désigné par vous, peut également prendre connaissance de l’ensemble de votre dossier. Aucune information ne sera diffusée à des tierces personnes (loi N° 78-17 du 06/01/1978 modifié) .",
+      "PARAS": "Je soussigné,  ",
+   "PARA1": "Charte de vie Privée et RGPD Stimed\n\nNous vous expliquons dans ce document la façon dont Stimed va collecter et utiliser vos données personnelles (informations vous concernant) pour les besoins de votre suivi médical et de votre sécurité. Ce document vous explique également quels sont vos droits concernant vos données et comment les mettre en œuvre auprès de Stimed. Stimed est responsable du traitement de vos informations qu’elle utilise.\n\nI. Pourquoi Stimed a besoin d'informations me concernant\n\nPour mon suivi médical\n\nPour établir un bilan à votre nom, Stimed a besoin d'informations vous concernant qui seront enregistrées dans votre dossier. La tenue de ce dossier est obligatoire. Le bilan sera mis à la disposition de votre professionnel de santé afin d'assurer votre suivi médical à distance. L’application Scores mise à votre disposition permet à votre professionnel de santé et à Stimed de collecter et utiliser vos données à distance. La collecte de vos données via l’application Scores ne pourra être en œuvre que si vous y consentez. Vous pouvez retirer votre consentement à tout moment.\n\nFinalité complémentaire\n\nEn complément de votre suivi médical, Stimed peut être amenée à utiliser vos données de santé, uniquement avec votre accord, afin d’élaborer des statistiques pour les besoins de son activité. En complément d'un usage interne, Stimed pourra être amenée à communiquer des évaluations statistiques de son activité auprès de son syndicat professionnel ou des organismes d'assurance maladie qui en feraient la demande. En aucun cas, ces évaluations pourront permettre de vous identifier directement.\n\nII. Quelles sont mes données utilisées par Stimed\n\nStimed a besoin de collecter et utiliser un ensemble d'informations vous concernant. Il peut s'agir de données relatives à votre identité mais également d'informations sur votre état de santé.\n\nMes données administratives\n\nIl s'agit des données relatives à votre identité et vos coordonnées nécessaires à la tenue d'un bilan « patient » à votre nom. Ex : nom, prénom, âge, lieu de résidence, numéro de sécurité sociale, etc. Si vous êtes concerné, Stimed devra recueillir les coordonnées de votre représentant légal (si vous êtes mineur), votre tuteur (si vous êtes sous tutelle), ou votre curateur (si vous êtes sous curatelle) auprès desquels Stimed doit recueillir le consentement via l’application Scores.\n\nMes données médicales\n\nIl s'agit des informations sur votre état de santé qui figurent dans votre bilan issu des questionnaires de l’application Scores, choisi par votre professionnel de santé en fonction de vos besoins, de vos pathologies. Ces informations seront mises à disposition de votre (vos) professionnel de santé déjà inscrit sur Scores. Ces données sont indispensables pour Stimed : elles constituent la base de votre suivi médical. Ces données seront collectées chaque fois que vous remplirez un formulaire communiqué par votre professionnel de santé. La fréquence de la collecte de vos données de santé sera déterminée par votre professionnel de santé.\n\nIII. Qui a accès à mes données personnelles\n\nVos données de santé ne sont accessibles que par des personnes habilitées et soumises au secret professionnel. Il s'agit des personnes suivantes : Le personnel de Stimed Vos données personnelles sont utilisées par les équipes de Stimed pour des fins statistiques. L'ensemble du personnel de Stimed ayant accès à vos données personnelles est soumis au secret professionnel. Dans toute la mesure possible, ces données sont anonymisées. Mon professionnel de santé Les données de santé vous concernant sont mises à la disposition de votre professionnel de santé afin d’exécuter un diagnostic à distance. Un hébergeur de données de santé (HDS) agréé Vos données médicales sont conservées de manière sécurisée par un hébergeur de données de santé agréé, comme l’exige la réglementation.\n\nIV. Pendant combien de temps mes données personnelles sont-elles conservées par Stimed\n\nVos données sont conservées dans les dossiers de Stimed pendant toute la durée de votre traitement par votre professionnel de santé. Elles sont ensuite supprimées des dossiers de Stimed pour être archivées pendant une durée de 20 ans. Dans tous les cas, vos données sont conservées selon des modalités garantissant leur sécurité et leur confidentialité.\n\nV. Comment mes données personnelles sont-elles utilisées et conservées\n\nVos données seront collectées et utilisées exclusivement pour les besoins de votre suivi médical ou pour l'une des finalités mentionnées au paragraphe I. Les données de santé vous concernant ne sont accessibles que par les personnes mentionnées au paragraphe III. L’ensemble de vos données médicales sont hébergées par un hébergeur des données de santé agréé pendant une durée limitée telle que mentionnée au paragraphe IV. La sécurité et la confidentialité de vos données sont assurées dans le strict respect des exigences réglementaires.\n\nVI. Quels sont mes droits et comment puis-je les exercer\n\nJe souhaite accéder à mes données personnelles Le droit d'accès à vos données personnelles vous permet de connaître les données que Stimed détient sur vous et de savoir si ces données vous concernant font l'objet d'un diagnostic médical. En effet, l’application Scores vous offre la possibilité d’accéder à vos informations personnelles que vous avez saisies afin de créer votre profil (nom, prénom, mail, téléphone, adresse, genre, numéro de sécurité sociale). Aux informations que vous avez saisies sur les formulaires que vous avez reçus de la part de votre professionnel de santé. Vous pouvez visualiser vos réponses via l’application Scores. Une demande d’accès à vos données se fait directement auprès de Stimed selon les modalités décrites au paragraphe VII, ci-après. Je souhaite rectifier mes données personnelles Le droit de rectification de vos données personnelles vous permet de corriger ou compléter vos données personnelles qui seraient inexactes ou qui auraient changé. Ex : erreur dans votre nom, changement d'adresse, etc. La rectification de vos données peut être faite par vous-même, directement via l’application Score. Si vous n’avez plus accès à l’application Scores, une demande de rectification de vos données doit être faite directement auprès de Stimed selon les modalités décrites au paragraphe VII, ci-après. Je souhaite supprimer mes données personnelles Vous avez le droit de demander à Stimed l'effacement de vos données à caractère personnel, notamment pour une des raisons suivantes : Vos données ne sont pas ou plus nécessaires au regard des objectifs pour lesquels elles ont été initialement collectées ou utilisées par Stimed (ex : vous ne voulez plus utiliser l’application Score). Vous vous êtes opposé au traitement de vos données par Stimed pour des raisons légitimes. Vos données font l'objet d'un traitement illicite. Vos données doivent être effacées pour respecter une obligation légale. Veuillez noter que les données qui sont archivées ou dont l'utilisation est nécessaire à Stimed pour répondre à une obligation légale ne peuvent pas être supprimées. La demande de suppression de vos données se fait directement auprès de Stimed selon les modalités décrites au paragraphe VII, ci-après. Je souhaite m'opposer au traitement par Stimed de mes données personnelles Le droit d'opposition vous permet de vous opposer à ce que Stimed utilise vos données personnelles. Vous ne pouvez vous opposer au traitement de vos données personnelles que pour un motif légitime tenant à votre situation particulière, par exemple, si vous ne souhaitez plus utiliser l’application Scores. La demande d'opposition au traitement de vos données se fait directement auprès de Stimed selon les modalités décrites au paragraphe VII, ci-après. Je souhaite solliciter une limitation du traitement de mes données personnelles Vous pouvez demander à Stimed de limiter l'utilisation de vos données dans les cas suivants : inexactitude de vos données, illicité du traitement, données inutiles, opposition au traitement. La demande de limitation du traitement de vos données se fait directement auprès de Stimed selon les modalités décrites au paragraphe VII, ci-après. Je souhaite communiquer mes directives anticipées concernant le sort de mes données personnelles Vous avez la possibilité de communiquer vos directives concernant le sort de vos données à caractère personnel en cas de décès. Vous pouvez exercer ce droit directement auprès de Stimed selon les modalités décrites au paragraphe VII, ci-après. Je souhaite introduire une réclamation auprès de la Commission Nationale de l'Informatique et des Libertés (CNIL) Dans le cadre de l'exercice de vos droits, Stimed mettra tout en œuvre pour que vous obteniez satisfaction. Si vous n'étiez pas satisfait de la réponse de Stimed après justifications, vous avez la possibilité d'introduire une réclamation auprès de la CNIL, qui exercera alors son rôle d'autorité de contrôle.\n\nVII. À qui puis-je m'adresser en cas de questions relative à mes données\n\nPour toute question concernant vos données personnelles vous devez contacter le délégué à la protection des données (DPD) désigné par Stimed dont les coordonnées sont les suivantes : Adresse e-mail : a.gille@stimed.fr Adresse postale : STIMED – Délégué à la protection des données - 2, route départementale 974, 21190, Meursault, FRANCE. Pour toute question concernant votre bilan médical, vous devez contacter Stimed, dont les coordonnées sont mentionnées au paragraphe ci-dessus. Avant toute réponse à votre question, la copie de votre pièce d'identité pourra vous être demandée par Stimed pour vérifier votre identité.\n\nQuels sont vos droits\n\nConformément à la loi « informatique et libertés » du 6 janvier 1978 modifiée et au Règlement européen « RGPD » 2016/679 du 27 avril 2016, vous bénéficiez d’un droit d'accès, de rectification, d'opposition, de suppression et de limitation aux informations qui vous concernent, que vous pouvez exercer en vous adressant soit au Délégué à la Protection des Données de Stimed pour les données administratives ; soit au professionnel de santé défini par Stimed pour les données médicales et ce sur simple demande écrite ou par email accompagnée d'une copie de votre pièce d'identité à l'adresse suivante : Adresse e-mail : a.gille@stimed.fr Adresse postale : STIMED – Délégué à la protection des données - 2, route départementale 974, 21190, Meursault, FRANCE."
+      
+      
+    },
+    "UPDATEMOT": {
+      "MP": "Modifier mot de passe",
+      "SEND": "Envoyer",
+      "P": "Lien de verification a été envoyer dans votre boite mail ",
+      "MO": "Mot de passe oublié ?"
+    },
+    "FORMVALIDATIONS": {
+      "Nreq": "Le nom est requis.",
+      "Ereq": "L'e-mail est requis.",
+      "Einv": "Format d'e-mail invalide.",
+      "SUBreq": "Le sujet est requis.",
+      "MSGreq": "Le message est requis."
+    },
+    "INVITATION": {
+      "Pen": "En attente",
+      "SEN": "Envoyer",
+      "Act": "Acceptée",
+      "INVPEN": "Invitations en attente"
+    },
+    "BUTTONS": {
+      "addaccount": "Créer un Compte"
+    },
+    "PROPREVIEW": {
+      "ReprotTile": "Rapport de Formulaire",
+      "SECTION1": "Informations Patient",
+      "SECTION2": "Informations Formulaire",
+      "NQUES": "Nombre de Questions",
+      "CONTENT": "Contenu du Formulaire",
+      "tt": "Titre"
+    },
+    "FORMSTATUS": {
+      "done": "Remplis",
+      "notDone": "Non Remplis"
+    },
+    "MODALLOGOUT": {
+      "title": "Déconnexion",
+      "msg": "Voulez-vous vraiment vous déconnecter ?",
+      "cancel": "Annuler",
+      "confirm": "Confirmer"
+    },
+    "NODATA" :{
+     "contact":"Aucun Contact trouvé.",
+     "forms":"Aucun Formulaire trouvé.",
+     "folders":"Aucun dossier trouvé.",
+     "invt":"Aucune Invitation trouvée.",
+     "TRYNUMBER":"Essai Numéro"
+
+    },
+    "errors": {
+      "required": {
+        "name": "Nom obligatoire",
+        "minLengthName": "Minimum 2 caractères pour le nom",
+        "lastName": "Prénom obligatoire",
+        "phoneRequired": "Le numéro de téléphone est obligatoire",
+        "phoneLength": "Veuillez entre entre 8 et 16 chiffres pour le numéro de téléphone",
+        "addressMinLength": "L'adresse doit comporter au moins 2 caractères",
+        "rppsRequired": "Le RPPS est obligatoire",
+        "rppsLength": "Le RPPS doit comporter 12 chiffres",
+        "emailRequired": "Email est obligatoire",
+        "invalidEmail": "Adresse email invalide",
+        "passwordRequired": "Mot de passe est obligatoire",
+        "passwordLength": "8 caractères minimum pour le mot de passe",
+        "passwordComplexity": "Le mot de passe doit être plus complexe [a-z][A-Z][@$!%*?&]",
+        "confirmPassword": "Confirmer votre mot de passe",
+        "acceptTerms": "Accepter les conditions générales est obligatoire",
+        "heightRequired": "Taille obligatoire",
+        "weightRequired": "Le Poids est obligatoire",
+        "weightLength": "Maximum de 3 chiffres pour le poids",
+        "NODATA":"Aucun formulaire disponible."
+      }
+    },
+    
+      "FILTER": {
+        "RECENT": "Récent",
+        "OLDEST": "Le plus ancien",
+        "SORT":"Trier"
+      },
+    
+      "ACCOUNT_STATUS": {
+        "ACTIVE": "Actif",
+        "INACTIVE": "Inactif"
+      },
+      "ERRORS": {
+        "NOT_LOGGED_IN": "Le patient n'est pas connecté",
+        "FETCH_DOCTORS": "Erreur lors de la récupération des médecins",
+        "FETCH_FORMS": "Erreur lors de la récupération des formulaires"
+      },
+      "OVERLAY": {
+        "COMPLETED_FORMS": "Formulaires complétés",
+        "UNCOMPLETED_FORMS": "Formulaires non complétés"
+      },
+      "LOG": {
+        "IS_COMPLETED": "Les formulaires sont-ils complétés :"
+      },
+    
+
+
+      "profile": {
+        "title": "Informations du Profil",
+        "name": "Nom",
+        "lastname": "Prénom",
+        "email": "Email",
+        "gender": "Genre",
+        "birthday": "Date de naissance",
+        "phone": "Numéro de téléphone",
+        "address": "Adresse",
+        "weight": "Poids",
+        "size": "Taille",
+        "totalForms": "Nombre total de formulaires",
+        "completedForms": "Formulaires remplis",
+        "uncompletedForms": "Formulaires non remplis"
+      },
+      "config": {
+    "scale": "Échelle",
+    "mode": "Mode",
+    "dark": "Sombre",
+    "light": "Clair"
+  }
+  }
+  

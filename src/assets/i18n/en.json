@@ -1,0 +1,550 @@
+{
+    "LANGUAGEOPTION": {
+      "CAPTION": "Choose Language"
+    },
+
+    
+      "table": {
+        "clear": "Clear",
+        "search_keyword": "Search ",
+        "name": "Name",
+        "search_by_name": "Search by name",
+        "email": "Email",
+        "search_by_email": "Search by email",
+        "job_title": "Job Title",
+        "search_by_job": "Search by job",
+        "phone": "Phone",
+        "search_by_phone": "Search by phone",
+        "forms_filled": "Forms Filled",
+        "forms_not_filled": "Forms Not Filled",
+        "done": "Done",
+        "pending": "Pending",
+        "form_title": "Form Title",
+        "status": "Status"
+      },
+      "patientInvitations": {
+    "title": "Patient Invitations",
+    "searchPlaceholder": "Search",
+    "headers": {
+      "name": "Name",
+      "specialty": "Specialty",
+      "status": "Status",
+      "actions": "Actions"
+    },
+    "status": {
+      "accepted": "Accepted",
+      "pending": "Pending"
+    },
+    "actions": {
+      "accept": "Accept"
+    },
+    "noData": "No invitations found."
+  },
+  "profileInformation": {
+    "title": "Profile Information",
+    "profileTab": "Profile",
+    "changePasswordTab": "Change Password",
+    "name": "Name",
+    "lastname": "Last Name",
+    "email": "Email",
+    "gender": "Gender",
+    "birthday": "Date of Birth",
+    "tel": "Phone Number",
+    "weight": "Weight",
+    "size": "Size",
+    "ssn": "SSN",
+    "oldPassword": "Old Password",
+    "newPassword": "New Password",
+    "confirmPassword": "Confirm Password",
+    "passwordMismatch": "Passwords do not match",
+    "editButton": "Edit",
+    "submitButton": "Submit",
+    "passwordDialogHeader": "Enter Password",
+    "password": "Password",
+    "cancelButton": "Cancel",
+    "confirmButton": "Confirm"
+  },
+  "patientForm": {
+    "clearFiltersButton": "Clear Filters",
+    "searchPlaceholder": "Search",
+    "formTitle": "Form Title",
+    "searchByTitlePlaceholder": "Search by title",
+    "affectedOn": "Affected On",
+    "searchByDatePlaceholder": "Search by date",
+    "noUnfilledFormsMessage": "No unfilled forms available",
+    "doctorHeader": "{{ doctor.name }} ({{ doctor.job }})"
+  },
+  "patientCreation": {
+    "CREATE_PATIENT": "Create Patient",
+    "PLACEHOLDER_EMAIL": "Enter your email",
+    "LABEL_EMAIL": "Email",
+    "VERIFY_EMAIL": "Verify Email",
+    "WHAT_NEXT": "What would you like to do next?",
+    "SEND_INVITATION": "Send Invitation",
+    "FILL_ACCOUNT_DETAILS": "Fill Account Details",
+    "LOADING": "Loading...",
+    "ENTER_PASSWORD": "Enter Password",
+    "PASSWORD_PROMPT": "Please enter a password for the new account.",
+    "PLACEHOLDER_PASSWORD": "Enter your password",
+    "LABEL_PASSWORD": "Password",
+    "PASSWORD_MINLENGTH_ERROR": "Password must be at least 8 characters long.",
+    "PLEASE_ENTER_EMAIL": "Please enter an email address.",
+    "INVALID_EMAIL": "The email address is invalid.",
+    "BLOCKED_ACCOUNT": "This account is blocked.",
+    "EXISTING_ACCOUNT": "This account already exists.",
+    "NON_EXISTENT_ACCOUNT": "This email is valid.",
+    "ALREADY_IN_CONTACT": "This email is already in contact.",
+    "UNEXPECTED_RESPONSE": "Unexpected response from the server.",
+    "ISSUE_OCCURRED": "An issue occurred. Please try again.",
+    "ERROR_OCCURED": "An error occurred.",
+    "VERIFY_EMAIL_FIRST": "Please verify the email first.",
+    "INVITATION_SENT": "Invitation sent",
+    "NAVIGATING_TO_FORM": "Navigating to the account creation form.",
+    "ACCOUNT_CREATED_SUCCESS": "Account successfully created",
+    "ACCOUNT_CREATION_FAILED": "Account creation failed",
+    "WARNING": "Warning",
+    "ERROR": "Error",
+    "SUCCESS": "Success",
+    "INFO": "Info"
+  },  
+  
+  "myPatient": {
+    "patientsList": "Patients List",
+    "clear": "Clear",
+    "searchKeyword": "Search",
+    "loading": "Loading...",
+    "filterByStatus": "Filter by Status",
+    "filterByDate": "Filter by Date",
+    "pageSize": "Page Size",
+    "currentPage": "Current Page",
+    "noPatientsFound": "No patients found.",
+    "loadingPatientData": "Loading patient data. Please wait.",
+    "invitationSuccess": "Invitation sent successfully.",
+    "invitationError": "Invitation not sent.",
+    "addPatient": "Add Patient",
+    "editPatient": "Edit Patient",
+    "deletePatient": "Delete Patient",
+    "patientDetails": "Patient Details",
+    "updatePatient": "Update Patient",
+    "patientStatus": "Patient Status",
+    "viewProfile": "View Profile",
+    "name": "Name",
+    "email": "Email",
+    "searchByEmail": "Search by Email",
+    "formsFilled": "Filled",
+    "formsNotFilled": "Not Filled",
+    "lastFormDate": "Affectation Date",
+    "actions": "Actions",
+    "forms": "Forms",
+    "completedForms": "Completed Forms",
+    "incompleteForms": "Incomplete Forms",
+    "searchForms": "Search Forms",
+    "formTitle": "Form Title",
+    "affectedDate": "Affected Date",
+    "filledDate": "Filled Date",
+    "dueDate": "Due Date",
+    "noCompletedForms": "No completed forms available.",
+    "noIncompleteForms": "No incomplete forms available."
+  },
+  "doctorProfile": {
+    "profileInfo": "Profile Information",
+    "name": "Name",
+    "lastname": "Lastname",
+    "email": "Email",
+    "job": "Job",
+    "birthday": "Date of Birth",
+    "phoneNumber": "Phone Number",
+    "fax": "Fax Number",
+    "address": "Address",
+    "rpps": "RPPS",
+    "title": "Title",
+    "modify": "Modify",
+    "submit": "Submit",
+    "oldPassword": "Old Password",
+    "newPassword": "New Password",
+    "confirmPassword": "Confirm Password",
+    "passwordMismatch": "Passwords do not match",
+    "updateProfileSuccess": "Profile updated successfully.",
+    "updateProfileError": "Failed to Update profile, verify your password!",
+    "updatePasswordSuccess": "Password updated successfully!",
+    "updatePasswordError": "Verify your current password!",
+    "passwordRequired": "Password is required!",
+    "passwordDialogHeader": "Enter Password",
+    "passwordDialogPlaceholder": "Password",
+    "profileUpdatedSuccessfully": "Profile updated successfully.",
+    "changePassword": "Change Password",
+  "profileUpdateFailed": "Failed to update profile. Please verify your password.",
+  "passwordUpdatedSuccessfully": "Password updated successfully!",
+  "passwordUpdateFailed": "Please verify your current password!"
+  },
+
+  "MyFolders": {
+    "folders":"folders",
+    "foldersList": "Folders List",
+    "clear": "Clear",
+    "searchKeyword": "Search",
+    "name": "Name",
+    "actions": "Actions",
+    "folderContent": "Folder Content"
+  },
+  "DoctorForms": {
+    "formManagement": "Form Management",
+    "clear": "Clear",
+    "searchKeyword": "Search",
+    "select": "Select",
+    "title": "Title",
+    "assignedFolders": "Assigned Folders",
+    "actions": "Actions",
+    "viewForm": "View Form",
+    "sendForm": "Send Form",
+    "folders":"folders",
+    "openForm": "Open Form",
+    "assignPatient": "Assign Patient",
+    "noFolders": "No folders"
+  },
+
+ "folderPreview": {
+    "searchKeyword": "Search",
+    "clear": "Clear",
+    "select": "Select",
+    "title": "Title",
+    "assignedFolders": "Assigned Folders",
+    "actions": "Actions",
+    "viewForm": "View Form",
+    "sendForm": "Send Form",
+    "openForm": "Open Form",
+    "dossiers": "Dossiers",
+    "assignPatient": "Assign Patient"
+  },
+  "affectation": {
+    "formTitle": "Form Title",
+    "clear": "Clear",
+    "searchKeyword": "Search",
+    "actions": "Actions",
+    "name": "Name",
+    "email": "Email",
+    "send": "Send",
+    "sharePatientDetails": "Click to share",
+    "noPatientsFound": "No patients found.",
+    "loadingPatientData": "Loading patient data. Please wait.",
+    "formAffectedSuccessfully": "Form affected successfully",
+    "formAffectationFailed": "Form affection failed",
+    "formAlreadyAffected": "The form \"{0}\" is already affected"
+  },
+        "menu": {
+            "home": "Home",
+            "profile": "Profile",
+            "patients": "Patients",
+            "patientList": "Patient List",
+            "addPatient": "Add Patient Account",
+            "myPatients": "My Patients",
+            "forms": "Forms",
+            "formList": "Forms List",
+            "completedForms": "Completed Forms",
+            "reports": "Reports",
+            "files": "Files",
+            "fileList": "Folders List",
+            "professionals": "Professionals",
+            "invitations": "Invitations",
+            "profList": "Professional List",
+            "pendingForms": "Pending Forms",
+            "confirmLogout": "Confirm Logout",
+            "logoutConfirmation": "Are you sure you want to logout?",
+            "cancel": "Cancel",
+            "logout": "Logout"
+        },
+        
+    "MENU": {
+      "HOME": "Home",
+      "CUSTOMERES": "Customers",
+      "ITEM": "Item"
+    },
+    "HOME": {
+      "TITLE": "Multilingual Website",
+      "SELECT": ".SELECT"
+    },
+    "PROFILE": {
+      "NAME": "First and last name",
+      "EMAIL": "Email",
+      "TELE": "Phone",
+      "PROF": "Professionnel",
+      "PAT": "Patient",
+      "PROFIL": "My profile",
+      "BRITHDATE": "Birth date",
+      "ADRESS": "Adress",
+      "UPDATE": "Edit",
+      "conf": "Confirm",
+      "PHOTOPROFIL": "Edit photo",
+      "SEND": "Send",
+      "UPDATEPROFILE": "Edit profile",
+      "Profile": "Profile",
+      "view": "View Info",
+      "modify": "Modify Information",
+      "change": "Change Password",
+      "update": "Update Password",
+      "old": "Old Password",
+      "new": "New Password",
+      "join": "date of join"
+    },
+    "MAILER": {
+      "NAME": "Name and Last Name ",
+      "EMAIL": "E-mail",
+      "SUBJECT": "Subejct",
+      "MESSAGE": "Message"
+    },
+    "LISTPATIENT": {
+      "LISTPATIENT": "List of patients",
+      "SEARCH": "Search",
+      "STATUSFORMS": "Status of the form",
+      "NAME": "Name",
+      "PRENOM": "Last name",
+      "DATECREATED": "Date created",
+      "ETAT": "Status",
+      "AUCUNN": "NO PATIENTS",
+      "PATIENT": "My patients",
+      "CC": "Create patient account"
+    },
+    "FORMS": {
+      "FORMS": "Forms",
+      "DO": "Folders",
+      "LISTFORM": "List of forms",
+      "VIEWFORMS": "View",
+      "AFFECTFORM": "Affect"
+    },
+    "HOMES": {
+      "HOME": "Home",
+      "APROP": "About",
+      "CONTACT": "Contact",
+      "ESPACEPRO": "Professional space",
+      "ESPACEPATIENT": "Patient space",
+      "PHRASE": "WELCOME TO THE SCORES APP",
+      "PHRASE1": "Our team is here to help you",
+      "START": "START",
+      "INFO": "More information",
+      "CONT": "Contact us"
+    },
+    "AUCUN": {
+      "AUCUNN": "NO INVITATION"
+    },
+    "INVIT": {
+      "DETAIL": "Detail",
+      "ACCEPT": "Accept",
+      "INVIT": "My Invitations",
+      "ALL": "Show All"
+    },
+    "LISTCONTACT": {
+      "LISTPATIENT": "List of contacts",
+      "SEARCH": "Search",
+      "STATUSFORMS": "Status of the form",
+      "NAME": "Name",
+      "PRENOM": "Last name",
+      "DATECREATED": "Date created",
+      "DATEAFFECTED": "Assignment Date",
+      "REMPLITEDDATE":"Date of filling",
+
+      "ETAT": "Status"
+    },
+    "SIDEMENU": {
+      "MC": "My account",
+      "LP": "Patient list",
+      "MP": "My Patients",
+      "MF": "My forms",
+      "DEC": "LogOut",
+      "LI": "Invitation List",
+      "CO": "Contacts",
+      "DO": "Folders",
+      "AP": "Add patient"
+    },
+    "AFFECTFORMS": {
+      "AFFECTBY": "Form affected",
+      "FORMSFILLED": "Form filled",
+      "FORMSUNFILLED": "Form unfilled",
+      "TITLE": "Title",
+      "DESC": "Description",
+      "AUCUNN": "AUCUNE CONTACT"
+    },
+    "CONTACT": {
+      "LOCATION": "Adress",
+      "EMAIL": "Email",
+      "TELE": "Phone",
+      "YN": "Name and LastName",
+      "YE": "Email",
+      "SB": "Subject",
+      "MES": "Message",
+      "CONT": "CONTACT US AT",
+      "SEND": "Send Message"
+    },
+    "AUTH": {
+      "IDENTIFIER": "Identify / Register",
+      "IDENTIFIER2": "Identify",
+      "INSCRIRE": "Register",
+      "EMAIL": "Email",
+      "MOTDEPASS": "Password",
+      "SIGNIN": "Sign In",
+      "CG": "Connection with Gouugle",
+      "RM": "Remember me !",
+      "NOM": "Name",
+      "PRENOM": "Last Name",
+      "DATEN": "Date of birth",
+      "TELE": "Phone Number",
+      "ADDRESS": "Adress",
+      "METIER": "Trade",
+      "CFM": "Confirm the password",
+      "ACCEPTT": "Accept Terms & Conditions",
+      "PROF": "Professional",
+      "PAT": "Patient",
+      "POID": "Weight (in kg)",
+      "SIZE": "Size (in cm)",
+      "IMC": "IMC",
+      "SEXEH": "Man",
+      "SEXEF": "Woman",
+      "TITRE": "Title",
+      "CS": "Confirm Signature",
+      "CLEAR": "Clear",
+      "ENR": "Register",
+      "MM": "MM/DD/YYYY",
+      "GENDER": "Gender",
+      "COUNTRY":"Country"
+    },
+    "P": {
+      "MC": "GETTING TO KNOW US",
+      "PH1": "Application Scores and Scientifically Referenced Self-Assessment Scales for Health Professionals",
+      "PH2": "Our company has developed with a cohort of expert patients and practitioners a connected self-assessment medical device to meet your expectations. We offer a modular application that adapts to your practice, which involves your patient in the management and evolution of his care.",
+      "PH3": "The results are available instantly, an analysis possible from the season by the patient(s) for a more rapid follow-up of his treatment ."
+    },
+    "PAGINATION": {
+      "PR": "Previous",
+      "NEXT": "Next"
+    },
+    "VALIDEMAIL": {
+      "EA": "Email address",
+      "ENTERE": "Enter email",
+      "VALIDER": "Valid"
+    },
+    "DIALOG": {
+      "BN": "Hi",
+      "PARA": "To help me develop a treatment that is best suited to your symptoms, please complete the following questionnaires by clicking on the appropriate button(s). These questions are about certain pelvic symptoms. When answering, consider the symptoms you experienced. You may object at any time without further justification. The information collected is strictly confidential. They will be the subject, unless you object justified, of a computer registration reserved for the use of your health professional. Your attending health professional is available to provide you with any information and any information necessary to your medical condition. Any doctor, appointed by you, can also examine your entire file. No information will be distributed to third parties (Law No. 78-17 of 06/01/1978 as amended) .",
+      "PARAS": "I, the undersigned,",
+      
+        "PARA1": "Privacy and GDPR Charter Stimed\n\nWe explain in this document how Stimed will collect and use your personal data (information about you) for the purposes of your medical monitoring and your safety. This document also explains your rights regarding your data and how to exercise them with Stimed. Stimed is responsible for the processing of your information that it uses.\n\nI. Why does Stimed need information about me\n\nFor my medical monitoring\n\nTo establish an assessment in your name, Stimed needs information about you that will be recorded in your file. Keeping this file is mandatory. The assessment will be made available to your healthcare professional to ensure your remote medical monitoring. The Scores application made available to you allows your healthcare professional and Stimed to collect and use your data remotely. The collection of your data via the Scores application can only be implemented if you consent. You can withdraw your consent at any time.\n\nComplementary purpose\n\nIn addition to your medical monitoring, Stimed may need to use your health data, only with your agreement, to develop statistics for its activity. In addition to internal use, Stimed may need to communicate statistical evaluations of its activity to its professional union or health insurance organizations that request it. In no case will these evaluations allow you to be directly identified.\n\nII. What data about me is used by Stimed\n\nStimed needs to collect and use a set of information about you. This may include data related to your identity as well as information about your health status.\n\nMy administrative data\n\nThese are data related to your identity and contact details necessary to keep a “patient” file in your name. For example: name, first name, age, place of residence, social security number, etc. If applicable, Stimed will need to collect the contact details of your legal representative (if you are a minor), your guardian (if you are under guardianship), or your curator (if you are under curatorship) from whom Stimed must obtain consent via the Scores application.\n\nMy medical data\n\nThese are the health status information that appears in your assessment resulting from the questionnaires in the Scores application, chosen by your healthcare professional based on your needs, your pathologies. This information will be made available to your healthcare professional(s) already registered on Scores. This data is essential for Stimed: it forms the basis of your medical monitoring. This data will be collected every time you fill out a form communicated by your healthcare professional. The frequency of collecting your health data will be determined by your healthcare professional.\n\nIII. Who has access to my personal data\n\nYour health data is only accessible to authorized persons bound by professional secrecy. These persons are: The Stimed staff Your personal data is used by Stimed teams for statistical purposes. All Stimed staff with access to your personal data is bound by professional secrecy. Whenever possible, this data is anonymized. My healthcare professional The health data concerning you is made available to your healthcare professional to carry out a remote diagnosis. An approved health data host (HDS) Your medical data is stored securely by an approved health data host, as required by regulations.\n\nIV. How long is my personal data kept by Stimed\n\nYour data is kept in Stimed's records for the duration of your treatment by your healthcare professional. It is then removed from Stimed's records to be archived for 20 years. In any case, your data is kept in ways that ensure its security and confidentiality.\n\nV. How is my personal data used and stored\n\nYour data will be collected and used exclusively for your medical monitoring or for one of the purposes mentioned in paragraph I. The health data concerning you is only accessible to the persons mentioned in paragraph III. All your medical data is hosted by an approved health data host for a limited time as mentioned in paragraph IV. The security and confidentiality of your data are ensured in strict compliance with regulatory requirements.\n\nVI. What are my rights and how can I exercise them\n\nI want to access my personal data The right of access to your personal data allows you to know what data Stimed holds about you and to know if this data concerning you is subject to a medical diagnosis. Indeed, the Scores application offers you the possibility to access your personal information that you have entered to create your profile (name, first name, email, phone, address, gender, social security number). To the information you have entered on the forms you received from your healthcare professional. You can view your answers via the Scores application. A request to access your data is made directly to Stimed as described in paragraph VII, below. I want to correct my personal data The right to rectification of your personal data allows you to correct or complete your personal data that would be inaccurate or have changed. For example: error in your name, change of address, etc. The correction of your data can be done by yourself, directly via the Scores application. If you no longer have access to the Scores application, a request to correct your data must be made directly to Stimed as described in paragraph VII, below. I want to delete my personal data You have the right to request that Stimed delete your personal data, notably for one of the following reasons: Your data is no longer necessary for the purposes for which it was initially collected or used by Stimed (for example, you no longer want to use the Scores application). You have opposed the processing of your data by Stimed for legitimate reasons. Your data is subject to illegal processing. Your data must be erased to comply with a legal obligation. Please note that data that is archived or whose use is necessary for Stimed to meet a legal obligation cannot be deleted. The request to delete your data is made directly to Stimed as described in paragraph VII, below. I want to oppose the processing of my personal data by Stimed The right to opposition allows you to oppose Stimed using your personal data. You can only oppose the processing of your personal data for a legitimate reason related to your particular situation, for example, if you no longer wish to use the Scores application. The request to oppose the processing of your data is made directly to Stimed as described in paragraph VII, below. I want to request a limitation on the processing of my personal data You can request that Stimed limit the use of your data in the following cases: inaccuracy of your data, illegal processing, unnecessary data, opposition to processing. The request to limit the processing of your data is made directly to Stimed as described in paragraph VII, below. I want to communicate my advance directives regarding the fate of my personal data You have the possibility to communicate your directives regarding the fate of your personal data in the event of death. You can exercise this right directly with Stimed as described in paragraph VII, below. I want to file a complaint with the National Commission for Information Technology and Civil Liberties (CNIL) In the exercise of your rights, Stimed will do everything possible to ensure your satisfaction. If you were not satisfied with Stimed's response after justifications, you have the option of filing a complaint with the CNIL, which will then exercise its role as a supervisory authority.\n\nVII. Who can I contact if I have questions about my data\n\nFor any questions concerning your personal data, you must contact the Data Protection Officer (DPO) appointed by Stimed whose contact details are as follows: Email address: a.gille@stimed.fr Postal address: STIMED – Data Protection Officer - 2, route départementale 974, 21190, Meursault, FRANCE. For any questions regarding your medical assessment, you must contact Stimed, whose contact details are mentioned in the above paragraph. Before any response to your question, a copy of your ID may be requested by Stimed to verify your identity.\n\nWhat are your rights\n\nIn accordance with the “Information Technology and Liberties” law of January 6, 1978, as amended, and the European “GDPR” Regulation 2016/679 of April 27, 2016, you have a right of access, rectification, opposition, deletion, and limitation of the information concerning you, which you can exercise by contacting either the Data Protection Officer of Stimed for administrative data; or the healthcare professional defined by Stimed for medical data and this on simple written request or by email accompanied by a copy of your ID to the following address: Email address: a.gille@stimed.fr Postal address: STIMED – Data Protection Officer - 2, route départementale 974, 21190, Meursault, FRANCE."
+      
+          },
+    "UPDATEMOT": {
+      "MP": "Modify Password",
+      "SEND": "Send",
+      "P": "Verification link has been sent to your mailbox ",
+      "MO": "Forgot password ?"
+    },
+    "FORMVALIDATIONS": {
+      "Nreq": "Name is required.",
+      "Ereq": "Email is required.",
+      "Einv": "Invalid email format.",
+      "SUBreq": "Subject is required.",
+      "MSGreq": "Message is required."
+    },
+    "INVITATION": {
+      "Pen": "Pending",
+      "SEN": "Add",
+      "Act": "Accepted",
+      "INVPEN": "Pending Invitations"
+    },
+    "BUTTONS": {
+      "addaccount": "Create Account"
+    },
+    "PROPREVIEW": {
+      "ReprotTile": "Form Report",
+      "SECTION1": "Patient Informations",
+      "SECTION2": "Form Informations",
+      "NQUES": "Number of Questions",
+      "CONTENT": "Form Content",
+      "tt": "Title"
+    },
+    "FORMSTATUS": {
+      "done": "Filled",
+      "notDone": "Unfilled"
+    },
+    "MODALLOGOUT": {
+      "title": "Log Out",
+      "msg": "Are you sure you want to log out ?",
+      "cancel": "Cancel",
+      "confirm": "Confirm"
+    },
+    "NODATA": {
+      "contact": "No contacts found.",
+      "forms": "No forms found.",
+      "folders": "No folders found.",
+      "invt":"No Invitations found.",
+         "NODATA":"No form available.",
+        "TRYNUMBER":"Try Number"
+        
+
+    },
+    "errors": {
+      "required": {
+        "name": "Name is required",
+        "minLengthName": "Minimum 2 characters for name",
+        "lastName": "Last name is required",
+        "phoneRequired": "Phone number is required",
+        "phoneLength": "Please enter between 8 and 16 digits for phone number",
+        "addressMinLength": "Address must have at least 2 characters",
+        "rppsRequired": "RPPS is required",
+        "rppsLength": "RPPS must have 12 digits",
+        "emailRequired": "Email is required",
+        "invalidEmail": "Invalid email address",
+        "passwordRequired": "Password is required",
+        "passwordLength": "Password should have at least 8 characters",
+        "passwordComplexity": "Password should be more complex [a-z][A-Z][@$!%*?&]",
+        "confirmPassword": "Confirm your password",
+        "acceptTerms": "Accept Terms & Conditions is required",
+        "heightRequired": "Height is required",
+        "weightRequired": "Weight is required",
+        "weightLength": "Maximum of 3 digits for weight"
+       
+      }
+    },
+    "FILTER": {
+      "RECENT": "Recent",
+      "OLDEST": "Oldest",
+      "SORT":"Sort"
+
+    },
+    "ACCOUNT_STATUS": {
+      "ACTIVE": "Active",
+      "INACTIVE": "Inactive"
+    },
+    "ERRORS": {
+      "NOT_LOGGED_IN": "Patient is not logged in",
+      "FETCH_DOCTORS": "Error fetching doctors",
+      "FETCH_FORMS": "Error fetching forms"
+    },
+    "OVERLAY": {
+      "COMPLETED_FORMS": "Completed Forms",
+      "UNCOMPLETED_FORMS": "Uncompleted Forms"
+    },
+    "LOG": {
+      "IS_COMPLETED": "Is completed forms:"
+    },
+    "profile": {
+      "title": "Profile Information",
+      "name": "Name",
+      "lastname": "Lastname",
+      "email": "Email",
+      "gender": "Gender",
+      "birthday": "Date of Birth",
+      "phone": "Phone Number",
+      "address": "Address",
+      "weight": "Weight",
+      "size": "Height",
+      "totalForms": "Total Forms",
+      "completedForms": "Completed Forms",
+      "uncompletedForms": "Uncompleted Forms"
+    },
+    "config": {
+      "scale": "Scale",
+      "mode": "Mode",
+      "dark": "Dark",
+      "light": "Light"
+    }
+    
+  }
+  

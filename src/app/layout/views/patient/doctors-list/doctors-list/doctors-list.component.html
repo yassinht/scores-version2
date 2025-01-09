@@ -1,0 +1,150 @@
+
+<div class="col-12">
+  <div class="card">
+     <p-panel header="{{ 'menu.profList' | translate }}" class="mb-4">
+        <!-- Spinner should be shown only when loading -->
+        <p-progressSpinner *ngIf="loading" style="display: block; margin: 0 auto; width: 50px; height: 50px;"></p-progressSpinner>
+
+        <!-- Table is shown only when loading is false -->
+        <p-table *ngIf="!loading" #dt1 [value]="doctors" dataKey="doctors._id" [rows]="10" [rowHover]="true"
+                 styleClass="p-datatable-gridlines" [paginator]="true"
+                 [globalFilterFields]="['doctors.name', 'doctors.email', 'doctors.job', 'doctors.tel', 'doctors.status']"
+                 responsiveLayout="scroll">
+           <!-- Table contents as you have it -->
+           <ng-template pTemplate="caption">
+              <div class="flex justify-content-between flex-column sm:flex-row">
+                 <button pButton label="{{ 'table.clear' | translate }}" class="p-button-outlined mb-2" icon="pi pi-filter-slash" (click)="clear(dt1)"></button>
+                 <span class="p-input-icon-left mb-2">
+                    <i class="pi pi-search"></i>
+                    <input pInputText type="text" #filter (input)="onGlobalFilter(dt1, $event)" placeholder="{{ 'table.search_keyword' | translate }}"
+                           class="w-full" />
+                 </span>
+              </div>
+           </ng-template>
+
+  <ng-template pTemplate="header">
+    <tr>
+      <th style="min-width: 12rem">
+        <div class="flex justify-content-between align-items-center">
+          {{ 'table.name' | translate }}
+        </div>
+      </th>
+      <th style="min-width: 12rem">
+        <div class="flex justify-content-between align-items-center">
+          {{ 'table.email' | translate }}
+          <p-columnFilter type="text" field="doctors.email" display="menu" placeholder="{{ 'table.search_by_email' | translate }}"></p-columnFilter>
+        </div>
+      </th>
+      <th style="min-width: 14rem">
+        <div class="flex justify-content-between align-items-center">
+          {{ 'table.job_title' | translate }}
+        </div>
+      </th>
+      <th style="min-width: 10rem">
+        <div class="flex justify-content-between align-items-center">
+          {{ 'table.phone' | translate }}
+        </div>
+      </th>
+      <th style="min-width: 10rem">
+        <div class="flex justify-content-between align-items-center">
+          {{ 'table.forms_filled' | translate }}
+          <p-columnFilter type="numeric" field="formsFilled" display="menu"></p-columnFilter>
+        </div>
+      </th>
+      <th style="min-width: 10rem">
+        <div class="flex justify-content-between align-items-center">
+          {{ 'table.forms_not_filled' | translate }}
+          <p-columnFilter type="numeric" field="formsNotFilled" display="menu"></p-columnFilter>
+        </div>
+      </th>
+    </tr>
+  </ng-template>
+
+  <ng-template pTemplate="body" let-doctor>
+    <tr>
+      <td>{{ doctor.doctors.name }}</td>
+      <td>{{ doctor.doctors.email }}</td>
+      <td>{{ doctor.doctors.job }}</td>
+      <td>{{ doctor.doctors.tel }}</td>
+      <td>{{ doctor.formsFilled }}
+        <span (click)="openFormsOverlay($event, doctor.doctors._id, true)"  *ngIf="doctor.formsNotFilled >= 0" class="p-tag p-tag-success ml-2 p-shadow-2">
+          <i class="pi pi-check" style="margin-right: 4px;"></i>
+          {{ 'table.done' | translate }}
+        </span>
+      </td>
+      <td>
+        <span>{{ doctor.formsNotFilled }}</span>
+        <span (click)="openFormsOverlay($event, doctor.doctors._id, false)" *ngIf="doctor.formsNotFilled >= 0" class="p-tag p-tag-warning ml-2 p-shadow-2">
+          <i class="pi pi-exclamation-triangle" style="margin-right: 4px;"></i>
+          {{ 'table.pending' | translate }}
+        </span>
+      </td>
+    </tr>
+  </ng-template>
+  
+  <p-overlayPanel #op1 [showCloseIcon]="true" [style]="{width: '450px'}">
+    <div class="card p-fluid">
+      <h5>{{ overlayTitle }}</h5>
+       <!-- Display completed Forms -->
+       <p-table *ngIf="isCompletedForms" [value]="formsCompleted" [paginator]="true" [rows]="5" responsiveLayout="scroll">
+        <ng-template pTemplate="header">
+          <tr>
+            <th>{{ 'table.form_title' | translate }}</th>
+            <th>{{ 'table.status' | translate }}</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-form>
+          <tr>
+            <td><p-accordion>
+                          
+              <div >
+                  <div colspan="3">
+                      
+                          <p-accordionTab (click)="toggleAccordion(rowIndex); getAllVersions(form.form._id)" header="{{ form.form.title }}">
+                              <div *ngFor="let version of triesDates; index as v" class="version-card" (click)="getVersion(form.form._id, version.tryNumber)">
+                                  <div class="version-header">
+                                      <span class="version-number">
+                                          {{"NODATA.TRYNUMBER" | translate}}: <span class="bold">{{ version.tryNumber }}</span>
+                                      </span>
+                                  </div>
+                                  <div class="version-details">
+                                      <span class="fill-date">
+                                          {{"LISTCONTACT.REMPLITEDDATE" | translate}}: {{ version.tryDate | date: 'yyyy-MM-dd' }}
+                                      </span>
+                                  </div>
+                              </div>
+                              
+                              
+                          </p-accordionTab>
+                      
+                  </div>
+              </div>
+          </p-accordion>
+          </td>
+            <td>{{ (form.affectedOn| date: 'short') }}</td>
+          </tr>
+        </ng-template>
+      </p-table>
+  
+        <!-- Display Incompleted Forms -->
+        <p-table *ngIf="!isCompletedForms" [value]="formsIncompleted" [paginator]="true" [rows]="5" responsiveLayout="scroll">
+          <ng-template pTemplate="header">
+            <tr>
+              <th>{{ 'table.form_title' | translate }}</th>
+              <th>{{ 'table.status' | translate }}</th>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-form>
+            <tr >
+              <td > <a (click)="openFormDetails(form.form._id)">{{ form.form.title }}</a></td>
+              <td>{{ (form.affectedOn| date: 'short') }}</td>
+            </tr>
+          </ng-template>
+        </p-table>
+      </div>
+  </p-overlayPanel>
+  
+</p-table>
+</p-panel>
+</div>
+</div>

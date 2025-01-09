@@ -1,0 +1,130 @@
+<div class="card modern-profile">
+  <h5 class="profile-title">{{ 'profile.title' | translate }}</h5>
+  <div class="grid profile-grid">
+    <!-- Name -->
+    <div class="info-box">
+      <i class="pi pi-user icon"></i>
+      <div>
+        <div class="label">{{ 'profile.name' | translate }}</div>
+        <div class="value">
+          <span>{{ patientDetails?.name }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lastname -->
+    <div class="info-box">
+      <i class="pi pi-user icon"></i>
+      <div>
+        <div class="label">{{ 'profile.lastname' | translate }}</div>
+        <div class="value">
+          <span>{{ patientDetails?.lastname }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Email -->
+    <div class="info-box">
+      <i class="pi pi-envelope icon"></i>
+      <div>
+        <div class="label">{{ 'profile.email' | translate }}</div>
+        <div class="value">
+          <span>{{ patientDetails?.email }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gender -->
+    <div class="info-box">
+      <i class="pi pi-users icon"></i>
+      <div>
+        <div class="label">{{ 'profile.gender' | translate }}</div>
+        <div class="value">
+          <span>{{ patientDetails?.gender }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Birthday -->
+    <div class="info-box">
+      <i class="pi pi-calendar icon"></i>
+      <div>
+        <div class="label">{{ 'profile.birthday' | translate }}</div>
+        <div class="value">
+          <span>{{ patientDetails?.birthday | date: 'dd/MM/yyyy' }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Phone Number -->
+    <div class="info-box">
+      <i class="pi pi-phone icon"></i>
+      <div>
+        <div class="label">{{ 'profile.phone' | translate }}</div>
+        <div class="value">
+          <span>{{ patientDetails?.tel }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Address -->
+    <div class="info-box">
+      <i class="pi pi-home icon"></i>
+      <div>
+        <div class="label">{{ 'profile.address' | translate }}</div>
+        <div class="value">
+          <span>{{ patientDetails?.adresse }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Weight -->
+    <div class="info-box">
+      <i class="pi pi-weight icon"></i>
+      <div>
+        <div class="label">{{ 'profile.weight' | translate }}</div>
+        <div class="value">
+          <span>{{ patientDetails?.weight }} kg</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Size -->
+    <div class="info-box">
+      <i class="pi pi-ruler icon"></i>
+      <div>
+        <div class="label">{{ 'profile.size' | translate }}</div>
+        <div class="value">
+          <span>{{ patientDetails?.size }} cm</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Total Forms -->
+    <div class="info-box">
+      <i class="pi pi-file icon"></i>
+      <div>
+        <div class="label">{{ 'profile.totalForms' | translate }}</div>
+        <div class="value">{{ allCompletedForms?.length + allInCompletedForms?.length }}</div>
+      </div>
+    </div>
+
+    <!-- Completed Forms -->
+    <div class="info-box">
+      <i class="pi pi-check icon"></i>
+      <div>
+        <div class="label">{{ 'profile.completedForms' | translate }}</div>
+        <div class="value">{{ allCompletedForms?.length }}</div>
+      </div>
+    </div>
+
+    <!-- Uncompleted Forms -->
+    <div class="info-box">
+      <i class="pi pi-times icon"></i>
+      <div>
+        <div class="label">{{ 'profile.uncompletedForms' | translate }}</div>
+        <div class="value">{{ allInCompletedForms?.length }}</div>
+      </div>
+    </div>
+  </div>
+</div>

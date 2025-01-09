@@ -1,0 +1,64 @@
+.actions-buttons p-button {
+    margin-right: 10px;
+  }
+  
+  .actions-buttons p-button:last-child {
+    margin-right: 0;
+  }
+  /* Flex container for the top row */
+.top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Aligns items vertically centered */
+    width: 100%;
+  }
+  
+  /* Optional: Adjust the width of the search input */
+  .search-input {
+    width: 250px; /* Adjust as needed */
+  }
+  
+  /* Optional: Add some margin to separate the button from the search input */
+  .top-row p-button {
+    margin-right: 10px; /* Adjust to create space between the button and search field */
+  }
+  .overlay-content {
+    padding: 20px;
+    color: #1a202c; /* Darker text for better contrast */
+    font-size: 1rem;
+    line-height: 1.5;
+    background-color: #e8f4ff; /* Light blue background for a calming effect */
+    border: none; /* Stronger blue border for better definition */
+    border-radius: 12px;
+    box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.15); /* More prominent shadow */
+  }
+  
+  .overlay-header {
+    font-size: 1.5rem; /* Larger header for better visibility */
+    font-weight: bold;
+    margin-bottom: 16px;
+    color: #004080; /* Darker blue for clear focus */
+  }
+  
+  .p-overlaypanel-content {
+    background-color: #e8f4ff; /* Consistent with overlay */
+    border-radius: 12px;
+  }
+  
+  .p-overlaypanel .p-overlaypanel-close {
+    color: none; /* Matches the header color */
+    background-color: transparent;
+  }
+  
+  .actions-buttons p-button {
+    margin-right: 8px;
+  }
+  .truncate-title {
+    display: inline-block;
+    max-width: 30rem; /* Adjust based on your table's layout */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer; /* Optional: indicate interactivity */
+  }
+

@@ -1,0 +1,160 @@
+<div class="grid p-fluid">
+  <div class="col-12 md:col-6">
+    <div class="card">
+      <!-- Patient Creation Header -->
+      <h5>{{ 'patientCreation.CREATE_PATIENT' | translate }}</h5>
+
+      <div class="p-fluid">
+        <!-- Input for email -->
+        <span class="p-float-label">
+          <input
+            id="email"
+            type="email"
+            pInputText
+            [(ngModel)]="email"
+            placeholder="{{ 'patientCreation.PLACEHOLDER_EMAIL' | translate }}"
+            required
+            [disabled]="emailStatus === 'NON_EXISTENT_ACCOUNT'"
+          />
+          <label for="email">{{ 'patientCreation.LABEL_EMAIL' | translate }}</label>
+        </span>
+        <button
+          type="button"
+          pButton
+          label="{{ 'patientCreation.VERIFY_EMAIL' | translate }}"
+          (click)="verifyEmail(email)"
+          class="mt-3"
+          [disabled]="isLoading || emailStatus === 'NON_EXISTENT_ACCOUNT'"
+        ></button>
+      </div>
+
+      <!-- Verification result -->
+      <div *ngIf="emailStatus" class="mt-4">
+        <p
+          [ngClass]="{
+            'text-success': emailStatus === 'EXISTING_ACCOUNT',
+            'text-danger': emailStatus === 'INVALID_EMAIL' || emailStatus === 'BLOCKED_ACCOUNT',
+            'text-warning': emailStatus === 'NON_EXISTENT_ACCOUNT' || emailStatus === 'ALREADY_IN_CONTACT'
+          }"
+        >
+          <!-- {{ emailStatus | translate }} -->
+        </p>
+      </div>
+
+      <!-- Options after verification -->
+      <div *ngIf="emailStatus === 'NON_EXISTENT_ACCOUNT'" class="mt-3">
+        <p>{{ 'patientCreation.WHAT_NEXT' | translate }}</p>
+        <div class="grid">
+          <div class="col-12 md:col-6">
+            <button
+              type="button"
+              pButton
+              label="{{ 'patientCreation.SEND_INVITATION' | translate }}"
+              class="p-button-info"
+              (click)="togglePassword()"
+            ></button>
+          </div>
+          <div class="col-12 md:col-6">
+            <button
+              type="button"
+              pButton
+              label="{{ 'patientCreation.FILL_ACCOUNT_DETAILS' | translate }}"
+              class="p-button-success"
+              [routerLink]="['/doctor/patientCreation-form']"
+              [queryParams]="{ email: email }"
+            ></button>
+               <!-- Clear button to reset the form -->
+      <div *ngIf="emailStatus === 'NON_EXISTENT_ACCOUNT'" class="mt-3">
+        <button
+        type="button"
+        pButton
+        label="clear"
+        class="p-button-outlined p-button-sm"
+        (click)="clearForm()"
+      ></button>
+      </div>
+          </div>
+        </div>
+      </div>
+
+      <div *ngIf="emailStatus === 'ALREADY_IN_CONTACT'" class="mt-3">
+        <p>{{ 'patientCreation.ALREADY_IN_CONTACT' | translate }}</p>
+      </div>
+
+      <!-- Loading indicator -->
+      <div *ngIf="isLoading" class="mt-3">
+        <p>{{ 'patientCreation.LOADING' | translate }}</p>
+      </div>
+
+   
+    </div>
+  </div>
+</div>
+
+<p-toast key="tst"></p-toast>
+
+<!-- Dialog for password entry -->
+<p-dialog
+  header="{{ 'patientCreation.ENTER_PASSWORD' | translate }}"
+  [(visible)]="isDialogVisible"
+  modal
+>
+  <div
+    class="p-d-flex p-ai-center p-jc-center p-flex-column"
+    style="gap: 1rem; padding: 1rem;"
+  >
+    <p>{{ 'patientCreation.PASSWORD_PROMPT' | translate }}</p>
+    <div class="p-fluid">
+      <div class="p-field">
+        <label for="email">{{ 'patientCreation.LABEL_EMAIL' | translate }}</label>
+        <input
+          id="email"
+          type="email"
+          pInputText
+          [(ngModel)]="email"
+          placeholder="{{ 'patientCreation.PLACEHOLDER_EMAIL' | translate }}"
+          disabled
+        />
+      </div>
+      <div class="p-field">
+        <label for="password">{{ 'patientCreation.LABEL_PASSWORD' | translate }}</label>
+        <div class="p-inputgroup">
+          <input
+            id="password"
+            [type]="passwordVisible ? 'text' : 'password'"
+            pInputText
+            [(ngModel)]="password"
+            placeholder="{{ 'patientCreation.PLACEHOLDER_PASSWORD' | translate }}"
+            required
+            minlength="8"
+            style="flex: 1;"
+            #passwordInput="ngModel"
+          />
+          <span
+            class="p-inputgroup-addon"
+            (click)="togglePasswordVisibility()"
+            style="cursor: pointer; display: flex; align-items: center; padding: 0; border: none; background: none;"
+          >
+            <i
+              [class]="passwordVisible ? 'pi pi-eye-slash' : 'pi pi-eye'"></i
+            >
+          </span>
+        </div>
+        <div *ngIf="passwordInput.errors?.minlength">
+          <small class="p-error">{{ 'patientCreation.PASSWORD_MINLENGTH_ERROR' | translate }}</small>
+        </div>
+      </div>
+
+      <!-- Aligning the button -->
+      <div class="p-d-flex p-jc-end mt-3">
+        <button
+          type="button"
+          pButton
+          label="{{ 'patientCreation.SEND_INVITATION' | translate }}"
+          class="p-button-info"
+          (click)="sendInvitation(email, password)"
+        ></button>
+      </div>
+    </div>
+  </div>
+</p-dialog>

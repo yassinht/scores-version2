@@ -1,0 +1,65 @@
+.terms-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    color: #333;
+  
+    h1 {
+      text-align: center;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+  
+    .main-content {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+  
+    .additional-section {
+      h2 {
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+  
+      p {
+        font-size: 14px;
+        line-height: 1.5;
+      }
+    }
+  
+    .btn {
+      display: inline-block;
+      width: 45%;
+      padding: 10px 15px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      margin: 10px;
+  
+      &.accept-btn {
+        background-color: #007bff;
+        color: #fff;
+  
+        &:hover {
+          background-color: #0056b3;
+        }
+      }
+  
+      &.decline-btn {
+        background-color: #dc3545;
+        color: #fff;
+  
+        &:hover {
+          background-color: #a71d2a;
+        }
+      }
+    }
+  }
+  

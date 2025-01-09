@@ -1,0 +1,128 @@
+.p-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #dee2e6;
+    background-color: #f8f9fa;
+    padding: 1rem;
+}
+
+button.p-button-primary {
+    background-color: #007ad9;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+}
+
+button.p-button-primary:hover {
+    background-color: #005bb5;
+}
+/* General Card Styling */
+.modern-card {
+    border-radius: 12px;
+    overflow: hidden;
+    background: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Styling */
+.patient-name {
+    font-size: 2rem;
+    color: #34495e;
+    margin: 0;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.modern-button {
+    border-radius: 20px;
+    padding: 0.5rem 1.5rem;
+    background: linear-gradient(90deg, #007ad9, #0056a3);
+    color: #fff;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.modern-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 122, 217, 0.3);
+}
+
+/* Accordion Styling */
+.modern-accordion .p-accordion-header {
+    background: linear-gradient(90deg, #f8f9fa, #e9ecef);
+    font-weight: bold;
+    color: #495057;
+}
+
+.modern-accordion .p-accordion-header:hover {
+    background: #e3f2fd;
+    color: #007ad9;
+}
+
+/* Grid for Tries */
+.tries-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.try-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.try-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Try Card Content */
+.try-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #495057;
+    margin-bottom: 0.5rem;
+}
+
+.try-date {
+    font-size: 0.95rem;
+    color: #868e96;
+    margin-bottom: 1rem;
+}
+
+.try-scores {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: #495057;
+}
+
+/* Button Styling */
+.details-button {
+    border-radius: 20px;
+    background: #17a2b8;
+    color: #fff;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.details-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(23, 162, 184, 0.3);
+}
+
+/* Loading Spinner */
+.loading-spinner {
+    font-size: 2rem;
+    color: #007ad9;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+/* No Data Message */
+.no-data-message {
+    font-size: 1.1rem;
+    color: #868e96;
+    text-align: center;
+    margin-top: 2rem;
+}

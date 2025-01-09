@@ -1,0 +1,34 @@
+<div class="layout-wrapper" [ngClass]="containerClass">
+    <app-topbar></app-topbar>
+    <div class="layout-sidebar">
+        <app-sidebar></app-sidebar>
+    </div>
+    <div class="layout-main-container">
+        <div class="layout-main">
+            <router-outlet></router-outlet>
+            <p-dialog [(visible)]="isDialogVisible" [style]="{width: '900px'}" [closable]="false" [modal]="true">
+                <p-header>
+                  Confirm Profile Completion
+                </p-header>
+              
+                <ng-container *ngIf="mailConfirmation !== 'true'">
+                  <!-- Show the ComplitProfileComponent only if mailConfirmation is not 'true' -->
+                  <app-complit-profile (profileCompleted)="completeProfile()"></app-complit-profile>
+                </ng-container>
+                
+                <ng-container *ngIf="mailConfirmation === 'true'">
+                  <!-- Show a message once profile is completed -->
+                  <p>
+                    Your profile has been confirmed. You may now proceed with your activities.
+                  </p>
+                  <button type="button" pButton icon="pi pi-check" label="OK" (click)="cancelLogout()"></button>
+                </ng-container>
+              </p-dialog>
+              
+
+        </div>
+        <app-footer></app-footer>
+    </div>
+    <app-config></app-config>
+    <div class="layout-mask"></div>
+</div>

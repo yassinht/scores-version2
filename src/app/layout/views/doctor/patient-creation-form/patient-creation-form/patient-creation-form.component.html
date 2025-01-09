@@ -1,0 +1,98 @@
+<form [formGroup]="patientForm" (ngSubmit)="onSubmit()">
+    <div class="card">
+      <h5>Patient Information</h5>
+      <div class="grid p-fluid mt-3">
+        <!-- Name -->
+        <div class="field col-12 md:col-4">
+          <span class="p-float-label">
+            <input id="name" type="text" pInputText formControlName="name" placeholder="Nom" />
+            <label for="name">Nom</label>
+          </span>
+          <p-messages *ngIf="patientForm.controls['name'].invalid && patientForm.controls['name'].touched" severity="error" text="Nom obligatoire"></p-messages>
+        </div>
+  
+        <!-- Lastname -->
+        <div class="field col-12 md:col-4">
+          <span class="p-float-label">
+            <input id="lastname" type="text" pInputText formControlName="lastname" placeholder="Prénom" />
+            <label for="lastname">Prénom</label>
+          </span>
+          <p-messages *ngIf="patientForm.controls['lastname'].invalid && patientForm.controls['lastname'].touched" severity="error" text="Prénom obligatoire"></p-messages>
+        </div>
+  
+        <!-- Email -->
+        <div class="field col-12 md:col-4">
+          <span class="p-float-label">
+            <input id="email" type="email" pInputText formControlName="email" placeholder="Email" />
+            <label for="email">Email</label>
+          </span>
+          <p-messages *ngIf="patientForm.controls['email'].invalid && patientForm.controls['email'].touched" severity="error" text="Email invalide"></p-messages>
+        </div>
+  
+        <!-- Gender -->
+        <div class="field col-12 md:col-4">
+          <label>Genre</label>
+          <div class="flex align-items-center">
+            <p-radioButton formControlName="gender" value="homme" label="Homme"></p-radioButton>
+            <p-radioButton formControlName="gender" value="femme" label="Femme"></p-radioButton>
+          </div>
+        </div>
+  
+        <!-- Birthday -->
+        <div class="field col-12 md:col-4">
+          <span class="p-float-label">
+            <p-calendar id="birthday" formControlName="birthday" dateFormat="dd/mm/yy" [showIcon]="true"></p-calendar>
+            <label for="birthday">Date de naissance</label>
+          </span>
+        </div>
+  
+        <!-- Phone Number -->
+        <div class="field col-12 md:col-4">
+          <span class="p-float-label">
+            <input id="tel" type="text" pInputText formControlName="tel" placeholder="Numéro de téléphone" />
+            <label for="tel">Numéro de téléphone</label>
+          </span>
+        </div>
+  
+        <!-- Address -->
+        <div class="field col-12 md:col-4">
+          <span class="p-float-label">
+            <input id="adresse" type="text" pInputText formControlName="adresse" placeholder="Adresse" />
+            <label for="adresse">Adresse</label>
+          </span>
+        </div>
+  
+        <!-- Weight -->
+        <div class="field col-12 md:col-4">
+          <span class="p-float-label">
+            <input id="weight" type="number" pInputText formControlName="weight" placeholder="Poids" />
+            <label for="weight">Poids</label>
+          </span>
+        </div>
+  
+        <!-- Size -->
+        <div class="field col-12 md:col-4">
+          <span class="p-float-label">
+            <input id="size" type="number" pInputText formControlName="size" placeholder="Taille" />
+            <label for="size">Taille</label>
+          </span>
+        </div>
+  
+        <!-- Password -->
+        <div class="field col-12 md:col-4">
+          <span class="p-float-label">
+            <input id="password" type="password" pInputText formControlName="password" placeholder="Mot de passe" />
+            <label for="password">Mot de passe</label>
+          </span>
+        </div>
+  
+
+     <!-- Submit Button -->
+     <div class="field col-12 md:col-6 lg:col-3">
+      <button pButton type="submit" label="Submit" class="p-button-primary p-button-sm"></button>
+    </div>
+  
+      </div>
+    </div>
+  </form>
+  

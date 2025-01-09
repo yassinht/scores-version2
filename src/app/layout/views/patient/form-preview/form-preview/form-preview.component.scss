@@ -1,0 +1,147 @@
+
+
+.container23 {
+  position: relative;
+  width: 500px;
+  height: 100px;
+  border: transparent;
+  margin-top: 1%;
+}
+
+
+
+  .slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    -webkit-appearance: none;
+    appearance: none;
+    /* background-image: url("https://cdn.pixabay.com/photo/2020/09/14/18/34/amazed-5571740_1280.png"); */
+    width: 82%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0);
+    outline: transparent;
+    margin: 0;
+    transition: all .2s;
+    border: transparent;
+    box-shadow:none;
+    margin-top: 10px;
+    }
+    .slider:hover {
+    background: rgba(255, 255, 255, 0);
+    }
+    .slider::-webkit-slider-thumb{
+    border: none;
+    height: 170px;
+    width: 180px;
+    background-color: transparent;
+    background-image: url("../../../../../../assets/demo/images/Douleurgraph2.png");
+    background-position: 0 0;
+    background-size: cover;
+    transform: scale(0.55) rotateZ(var(--thumb-rotate, 0deg));
+    cursor: pointer;
+    margin-top: -184px;
+    /* margin-left: 20px;
+    margin-right: 20px; */
+    -webkit-appearance: none;
+    }
+ 
+
+    /* *** */
+
+/* Section container with blue border */
+.section-container {
+    border-radius: 8px;
+    border-bottom: 8px solid #1762d3d3; /* Blue border */
+    padding-bottom: 10px; /* Optional: adds space below the section */
+  }
+  
+  /* Question container with orange border */
+  .question-container {
+    border-radius: 8px;
+    border-bottom: 8px solid #e84927; /* Orange border */
+    padding-bottom: 8px; /* Optional: adds space below the question */
+  }
+  
+  /* Section Container with Shadow */
+.section-container {
+    margin-bottom: 20px;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1), 0px 1px 3px rgba(0, 0, 0, 0.08); /* Modern shadow */
+    padding: 20px;
+  }
+  
+  /* Section Header with Border Under Title and Shadow */
+  .section-header {
+    border-bottom: 8px solid #1762d3d3;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1), 0px 1px 3px rgba(0, 0, 0, 0.08); /* Modern shadow */
+    margin-bottom: 10px;
+  }
+  
+  /* Question Container with Shadow */
+  .question-container {
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1), 0px 1px 3px rgba(0, 0, 0, 0.08); /* Modern shadow */
+    padding: 15px;
+  }
+  
+  /* Question Header (Title) */
+  .question-header h4 {
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  
+  /* Optional Styling for Input Fields in Questions */
+  input, select, textarea {
+    border-radius: 4px;
+    box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+    padding: 10px;
+  }
+  
+  /* Style for Buttons or Checkbox Inputs */
+  .p-checkbox, .p-radioButton {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+
+  h4{
+    padding: 2vh !important;
+  }
+
+  /* Responsive styles for mobile and medium-sized devices */
+@media screen and (max-width: 992px) {
+    .container23 {
+      width: 90%; /* Adjust width for smaller screens */
+      height: auto; /* Allow height to adjust naturally */
+      margin-top: 5%; /* Provide a comfortable margin for smaller screens */
+    }
+  
+    .slider {
+      width: 100%; /* Full width for better usability */
+      background: rgba(255, 255, 255, 0); /* Maintain transparency */
+      margin-top: 0px;
+    }
+  
+    .slider::-webkit-slider-thumb {
+      height: 120px; /* Reduce the thumb size */
+      width: 100px; /* Reduce the thumb size */
+      background-size: contain; /* Ensure the image scales proportionally */
+      transform: scale(0.4); /* Adjust scale for smaller viewports */
+      margin-top: -90px; /* Re-align the thumb */
+    }
+  
+    .img-thumbnail {
+      width: 120%; /* Image adapts to container width */
+      height: auto; /* Maintain aspect ratio */
+    }
+  }
+  .disabled-section {
+    pointer-events: none;  /* Prevent interaction with the whole section */
+    opacity: 0.5;          /* Optional: To make it look visually disabled */
+  }
+  

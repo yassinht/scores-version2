@@ -1,0 +1,66 @@
+<div class="p-card p-shadow-4 p-mb-4">
+    <!-- Header Section -->
+    <div class="p-card-header p-d-flex p-jc-between p-ai-center p-pb-3">
+        <!-- Patient Name -->
+        <div class="p-text-bold p-text-uppercase">
+            <h1 style="margin: 1rem; font-size: 1.8rem;">{{ this.profName }}</h1>
+        </div>
+    </div>
+
+    <!-- Body Section -->
+    <div class="p-card-body">
+        <!-- Loading Spinner -->
+        <div class="p-d-flex p-ai-center p-jc-center" *ngIf="loading">
+            <i class="pi pi-spin pi-spinner" style="font-size: 2rem; color: #007ad9;"></i>
+        </div>
+
+        <!-- Formulaires Section -->
+        <div *ngIf="!loading && formulaires.length > 0">
+            <p-accordion [multiple]="true">
+                <p-accordionTab
+                    *ngFor="let formulaire of formulaires"
+                    [header]="formulaire.title"
+                >
+                    <div class="p-grid p-nogutter p-dir-row">
+                        <div
+                            class="p-col-12 p-md-6 p-lg-4 p-mb-3 responsive-try-card"
+                            *ngFor="let try of formulaire.tries"
+                        >
+                            <div class="p-card p-shadow-2 try-container">
+                                <div class="p-card-body">
+                                    <p class="p-text-bold" style="margin-bottom: 0.5rem;">Try Number: {{ try.tryNumber }}</p>
+                                    <p style="margin-bottom: 0.5rem;">Date: {{ try.data_remplissage | date }}</p>
+                                    <ul class="p-m-0 p-pl-3">
+                                        <li *ngFor="let score of try.scores" class="p-mb-1">
+                                            Score: {{ score }}
+                                        </li>
+                                    </ul>
+
+                                    <!-- Button to Show Try Details -->
+                                     
+                                    <button 
+                                        pButton 
+                                        label="Show Details" 
+                                        icon="pi pi-info-circle" 
+                                        class="p-mt-2 p-button-sm"
+                                        [routerLink]="['/patient/response-preview/', patientId, doctorId,formId, try.tryNumber]" 
+                                
+                                        class="p-button p-component"
+                                    
+                                        
+                                        >
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </p-accordionTab>
+            </p-accordion>
+        </div>
+
+        <!-- No Data Message -->
+        <p *ngIf="!loading && formulaires.length === 0" class="p-text-center p-mt-4">
+            {{"NODATA.NODATA" | translate}}.
+        </p>
+    </div>
+</div>

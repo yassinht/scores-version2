@@ -1,0 +1,90 @@
+<h5 class="mb-4">{{form.title}}</h5>
+<p-table 
+    #dt 
+    [value]="patients" 
+    dataKey="id" 
+    [paginator]="true" 
+    [rows]="3" 
+    [globalFilterFields]="['patients.name', 'patients.email']" 
+    responsiveLayout="scroll"
+    styleClass="p-datatable-gridlines">
+
+    <!-- Search and Clear Filters -->
+    <ng-template pTemplate="caption">
+        <div class="flex justify-content-between flex-column sm:flex-row mb-3">
+            <button 
+                pButton 
+                [label]="'affectation.clear' | translate" 
+                class="p-button-outlined mb-2" 
+                icon="pi pi-filter-slash" 
+                (click)="clear(dt)">
+            </button>
+            <span class="p-input-icon-left mb-2">
+                <i class="pi pi-search"></i>
+                <input 
+                    pInputText 
+                    type="text" 
+                    #globalFilter 
+                    (input)="onGlobalFilter(dt, $event)" 
+                    [placeholder]="'affectation.searchKeyword' | translate" 
+                    class="w-full">
+            </span>
+        </div>
+    </ng-template>
+
+    <!-- Table Header -->
+    <ng-template pTemplate="header">
+        <tr>
+            <th style="min-width: 5rem">
+                <div class="flex justify-content-between align-items-center">
+                    {{ 'affectation.actions' | translate }}
+                </div>
+            </th>
+            <th pSortableColumn="patients.name" style="min-width: 12rem">
+                <div class="flex justify-content-between align-items-center">
+                    {{ 'affectation.name' | translate }}
+                </div>
+            </th>
+            <th pSortableColumn="patients.email" style="min-width: 12rem">
+                <div class="flex justify-content-between align-items-center">
+                    {{ 'affectation.email' | translate }}
+                </div>
+            </th>
+        </tr>
+    </ng-template>
+
+    <!-- Table Body -->
+    <ng-template pTemplate="body" let-patient>
+        <tr>
+            <td class="text-center">
+                <button 
+                    type="button" 
+                    pButton 
+                    (click)="affectForms(patient.patients._id)" 
+                    class="p-button-outlined p-button" 
+                    [title]="'affectation.sharePatientDetails' | translate" 
+                    icon="pi pi-share-alt" 
+                    aria-label="Share patient details"
+                    [label]="'affectation.send' | translate">
+                </button>
+            </td>
+            <td>{{ patient.patients.name }} {{ patient.patients.lastname }}</td>
+            <td>{{ patient.patients.email }}</td>
+        </tr>
+    </ng-template>
+
+    <!-- Empty State -->
+    <ng-template pTemplate="emptymessage">
+        <tr>
+            <td colspan="7" class="text-center">{{ 'affectation.noPatientsFound' | translate }}</td>
+        </tr>
+    </ng-template>
+
+    <!-- Loading State -->
+    <ng-template pTemplate="loadingbody">
+        <tr>
+            <td colspan="7" class="text-center">{{ 'affectation.loadingPatientData' | translate }}</td>
+        </tr>
+    </ng-template>
+</p-table>
+<p-toast key="tst"></p-toast>
